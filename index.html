@@ -1,0 +1,2256 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head><script>(function(firebaseConfig, initialAuthToken, appId) {
+        window.__firebase_config = firebaseConfig;
+        window.__initial_auth_token = initialAuthToken;
+        window.__app_id = appId;
+            })("\n{\n  \"apiKey\": \"AIzaSyCqyCcs2R2e7AegGjvFAwG98wlamtbHvZY\",\n  \"authDomain\": \"bard-frontend.firebaseapp.com\",\n  \"projectId\": \"bard-frontend\",\n  \"storageBucket\": \"bard-frontend.firebasestorage.app\",\n  \"messagingSenderId\": \"175205271074\",\n  \"appId\": \"1:175205271074:web:2b7bd4d34d33bf38e6ec7b\"\n}\n","eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg4NWQ3NDljYzY2NDljMDMxOWY1YmJlYWYwMWU4ZmVjZDIyZjk1YzQiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay1mYnN2Y0BiYXJkLWZyb250ZW5kLmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly9pZGVudGl0eXRvb2xraXQuZ29vZ2xlYXBpcy5jb20vZ29vZ2xlLmlkZW50aXR5LmlkZW50aXR5dG9vbGtpdC52MS5JZGVudGl0eVRvb2xraXQiLCJ1aWQiOiIxMDc5MjYxOTM4OTUwNDg0MzUxOCIsImlzcyI6ImZpcmViYXNlLWFkbWluc2RrLWZic3ZjQGJhcmQtZnJvbnRlbmQuaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJjbGFpbXMiOnsiYXBwSWQiOiJjXzUyNjk0NDk0NTU0NjBmZjlfYXBwX3RyYWNfbmdoaWVtX3RzMTAuaHRtbC03OTkifSwiZXhwIjoxNzc4ODQwNDA5LCJpYXQiOjE3Nzg4MzY4MDksImFsZyI6IlJTMjU2In0.KBxq3TzdirVUZtPS8Oh_wrYOxMQn0cLibbmtZ8fglgSq41kkFlotfZuRBmnknCLapt2LQmCsOlF2hmGIKZnFk-QxlKyP3VP0a1NdVcj2lZJfCZiQqGGw6QeY_gIlWFvd-JtE9Vq3-GV4ekMgUnmv7PT1dMJ6NllmsRGy7iXVqzuv2duVgJZzxhDU1BkZyLt4z9SK-FCT7eUb-DgPyApJ-z8OX_tz_J9mnow1YKTGvg7gzkFpmzdq_6qt6rWspElvep1oSRg7P3JhK5fY-pddL4CCwJWkbN5y34iQnQX51ZLq_sIt83Z25joi-VHrmkQ8bsSkgZJdTmzRZl5_y-BNZw","c_5269449455460ff9_app_trac_nghiem_ts10.html-799")</script><script>(function(){'use strict';var h=typeof Object.defineProperties=="function"?Object.defineProperty:function(a,b,d){if(a==Array.prototype||a==Object.prototype)return a;a[b]=d.value;return a};function l(a){a=["object"==typeof globalThis&&globalThis,a,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var b=0;b<a.length;++b){var d=a[b];if(d&&d.Math==Math)return d}throw Error("Cannot find global object");}var n=l(this);
+function p(a,b){if(b)a:{var d=n;a=a.split(".");for(var c=0;c<a.length-1;c++){var e=a[c];if(!(e in d))break a;d=d[e]}a=a[a.length-1];c=d[a];b=b(c);b!=c&&b!=null&&h(d,a,{configurable:!0,writable:!0,value:b})}}function r(a){function b(c){return a.next(c)}function d(c){return a.throw(c)}return new Promise(function(c,e){function f(g){g.done?c(g.value):Promise.resolve(g.value).then(b,d).then(f,e)}f(a.next())})}function t(a){return r(a())}
+p("Object.values",function(a){return a?a:function(b){var d=[],c;for(c in b)Object.prototype.hasOwnProperty.call(b,c)&&d.push(b[c]);return d}});p("Array.prototype.includes",function(a){return a?a:function(b,d){var c=this;c instanceof String&&(c=String(c));var e=c.length;d=d||0;for(d<0&&(d=Math.max(d+e,0));d<e;d++){var f=c[d];if(f===b||Object.is(f,b))return!0}return!1}});/*
+
+ MIT License
+
+ Copyright (c) 2017-2023 W.Y.
+
+ Permission is hereby granted, free of charge, to any person obtaining a copy
+ of this software and associated documentation files (the "Software"), to deal
+ in the Software without restriction, including without limitation the rights
+ to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ copies of the Software, and to permit persons to whom the Software is
+ furnished to do so, subject to the following conditions:
+
+ The above copyright notice and this permission notice shall be included in
+ all copies or substantial portions of the Software.
+
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ SOFTWARE.
+
+*/
+function u(a,b){var d=a.style;b.backgroundColor&&(d.backgroundColor=b.backgroundColor);b.width&&(d.width=`${b.width}px`);b.height&&(d.height=`${b.height}px`);var c=b.style;c!=null&&Object.keys(c).forEach(e=>{d[e]=c[e]})};var v=(()=>{var a=0;return()=>{a+=1;return`u${`0000${(Math.random()*1679616<<0).toString(36)}`.slice(-4)}${a}`}})();function w(a){var b=[];for(let d=0,c=a.length;d<c;d++)b.push(a[d]);return b}let x=null;function y(a={}){return x?x:a.l?x=a.l:x=w(window.getComputedStyle(document.documentElement))}function z(a,b){return(a=(a.ownerDocument.defaultView||window).getComputedStyle(a).getPropertyValue(b))?parseFloat(a.replace("px","")):0}
+function A(a,b={}){var d;if(!(d=b.width)){d=z(a,"border-left-width");var c=z(a,"border-right-width");d=a.clientWidth+d+c}(b=b.height)||(b=z(a,"border-top-width"),c=z(a,"border-bottom-width"),b=a.clientHeight+b+c);return{width:d,height:b}}function B(a){return new Promise((b,d)=>{var c=new Image;c.onload=()=>{c.decode().then(()=>{requestAnimationFrame(()=>b(c))})};c.onerror=d;c.crossOrigin="anonymous";c.decoding="async";c.src=a})}
+function C(a){return t(function*(){return Promise.resolve().then(()=>(new XMLSerializer).serializeToString(a)).then(encodeURIComponent).then(b=>`data:image/svg+xml;charset=utf-8,${b}`)})}
+function D(a,b,d){return t(function*(){var c=document.createElementNS("http://www.w3.org/2000/svg","svg"),e=document.createElementNS("http://www.w3.org/2000/svg","foreignObject");c.setAttribute("width",`${b}`);c.setAttribute("height",`${d}`);c.setAttribute("viewBox",`0 0 ${b} ${d}`);e.setAttribute("width","100%");e.setAttribute("height","100%");e.setAttribute("x","0");e.setAttribute("y","0");e.setAttribute("externalResourcesRequired","true");c.appendChild(e);e.appendChild(a);return C(c)})}
+var E=(a,b)=>{if(a instanceof b)return!0;a=Object.getPrototypeOf(a);return a===null?!1:a.constructor.name===b.name||E(a,b)};function F(a,b){return y(b).map(d=>{var c=a.getPropertyValue(d),e=a.getPropertyPriority(d);return`${d}: ${c}${e?" !important":""};`}).join(" ")}
+function G(a,b,d,c){a=window.getComputedStyle(a,d);var e=a.getPropertyValue("content");if(e!==""&&e!=="none"){var f=v();try{b.className=`${b.className} ${f}`}catch(k){return}e=document.createElement("style");var g=e.appendChild;d=`.${f}:${d}`;a.cssText?(c=a.getPropertyValue("content"),c=`${a.cssText} content: '${c.replace(/'|"/g,"")}';`):c=F(a,c);g.call(e,document.createTextNode(`${d}{${c}}`));b.appendChild(e)}};function H(a){return a.search(/^(data:)/)!==-1}function I(a,b,d){return t(function*(){var c=yield fetch(a,b);if(c.status===404)throw Error(`Resource "${c.url}" not found`);var e=yield c.blob();return new Promise((f,g)=>{var k=new FileReader;k.onerror=g;k.onloadend=()=>{try{f(d({o:c,result:k.result}))}catch(m){g(m)}};k.readAsDataURL(e)})})}const J={};function K(a,b,d){var c=a.replace(/\?.*/,"");d&&(c=a);/ttf|otf|eot|woff2?/i.test(c)&&(c=c.replace(/.*\//,""));return b?`[${b}]${c}`:c}
+function L(a,b,d){return t(function*(){var c=K(a,b,d.C);if(J[c]!=null)return J[c];d.u&&(a+=(/\?/.test(a)?"&":"?")+(new Date).getTime());try{let f=yield I(a,d.i,({o:g,result:k})=>{b||(b=g.headers.get("Content-Type")||"");return k.split(/,/)[1]});var e=`data:${b};base64,${f}`}catch(f){e=d.B||""}return J[c]=e})};const M={P:"application/font-woff",R:"application/font-woff",N:"application/font-truetype",v:"application/vnd.ms-fontobject",H:"image/png",F:"image/jpeg",D:"image/jpeg",A:"image/gif",M:"image/tiff",L:"image/svg+xml",O:"image/webp"};function N(a){return(a=/\.([^./]*?)$/g.exec(a))?a[1]:""};function O(a){return t(function*(){var b=a.toDataURL();return b==="data:,"?a.cloneNode(!1):B(b)})}function aa(a,b){return t(function*(){if(a.currentSrc){var d=document.createElement("canvas");let c=d.getContext("2d");d.width=a.clientWidth;d.height=a.clientHeight;c==null||c.drawImage(a,0,0,d.width,d.height);d=d.toDataURL();return B(d)}d=a.poster;d=yield L(d,M[N(d).toLowerCase()]||"",b);return B(d)})}
+function ba(a,b){return t(function*(){try{let d;if(a==null?0:(d=a.contentDocument)==null?0:d.body)return yield P(a.contentDocument.body,b,!0)}catch(d){}return a.cloneNode(!1)})}function ca(a,b){return t(function*(){return E(a,HTMLCanvasElement)?O(a):E(a,HTMLVideoElement)?aa(a,b):E(a,HTMLIFrameElement)?ba(a,b):a.cloneNode(a.tagName!=null&&a.tagName.toUpperCase()==="SVG")})}
+function da(a,b,d){return t(function*(){if(b.tagName!=null&&b.tagName.toUpperCase()==="SVG")return b;var c=[];if(a.tagName!=null&&a.tagName.toUpperCase()==="SLOT"&&a.assignedNodes)c=w(a.assignedNodes());else{let e;if(E(a,HTMLIFrameElement)&&((e=a.contentDocument)==null?0:e.body))c=w(a.contentDocument.body.childNodes);else{let f;c=w(((f=a.shadowRoot)!=null?f:a).childNodes)}}if(c.length===0||E(a,HTMLVideoElement))return b;yield c.reduce((e,f)=>e.then(()=>P(f,d)).then(g=>{g&&b.appendChild(g)}),Promise.resolve());
+return b})}function ea(a,b,d){var c=b.style;if(c){var e=window.getComputedStyle(a);e.cssText?(c.cssText=e.cssText,c.transformOrigin=e.transformOrigin):y(d).forEach(f=>{var g=e.getPropertyValue(f);f==="font-size"&&g.endsWith("px")&&(g=`${Math.floor(parseFloat(g.substring(0,g.length-2)))-.1}px`);E(a,HTMLIFrameElement)&&f==="display"&&g==="inline"&&(g="block");f==="d"&&b.getAttribute("d")&&(g=`path(${b.getAttribute("d")})`);c.setProperty(f,g,e.getPropertyPriority(f))})}}
+function fa(a,b){E(a,HTMLSelectElement)&&(b=Array.from(b.children).find(d=>a.value===d.getAttribute("value")))&&b.setAttribute("selected","")}
+function ha(a,b){return t(function*(){var d=a.querySelectorAll?a.querySelectorAll("use"):[];if(d.length===0)return a;var c={};for(var e=0;e<d.length;e++){var f=d[e].getAttribute("xlink:href");if(f){let g=document.querySelector(f);a.querySelector(f)||!g||c[f]||(c[f]=yield P(g,b,!0))}}d=Object.values(c);if(d.length){c=document.createElementNS("http://www.w3.org/1999/xhtml","svg");c.setAttribute("xmlns","http://www.w3.org/1999/xhtml");c.style.position="absolute";c.style.width="0";c.style.height="0";
+c.style.overflow="hidden";c.style.display="none";e=document.createElementNS("http://www.w3.org/1999/xhtml","defs");c.appendChild(e);for(f=0;f<d.length;f++)e.appendChild(d[f]);a.appendChild(c)}return a})}
+function P(a,b,d){return t(function*(){return d||!b.filter||b.filter(a)?Promise.resolve(a).then(c=>ca(c,b)).then(c=>da(a,c,b)).then(c=>{E(c,Element)&&(ea(a,c,b),G(a,c,":before",b),G(a,c,":after",b),E(a,HTMLTextAreaElement)&&(c.textContent=a.value),E(a,HTMLInputElement)&&c.setAttribute("value",a.value),fa(a,c));return c}).then(c=>ha(c,b)):null})};const Q=/url\((['"]?)([^'"]+?)\1\)/g,ia=/url\([^)]+\)\s*format\((["']?)([^"']+)\1\)/g,ja=/src:\s*(?:url\([^)]+\)\s*format\([^)]+\)[,;]\s*)+/g;function ka(a){var b=[];a.replace(Q,(d,c,e)=>{b.push(e);return d});return b.filter(d=>!H(d))}
+function la(a,b,d,c){return t(function*(){try{let e=d?(new URL(b,d||void 0)).toString():b,f;f=yield L(e,M[N(b).toLowerCase()]||"",c);return a.replace(new RegExp(`(url\\(['"]?)(${b.replace(/([.*+?^${}()|\[\]\/\\])/g,"\\$1")})(['"]?\\))`,"g"),`$1${f}$3`)}catch(e){}return a})}function ma(a,{I:b}){return b?a.replace(ja,d=>{for(;;){let [c,,e]=ia.exec(d)||[];if(!e)return"";if(e===b)return`src: ${c};`}}):a}
+function R(a,b,d){return t(function*(){if(a.search(Q)===-1)return a;var c=ma(a,d);return ka(c).reduce((e,f)=>e.then(g=>la(g,f,b,d)),Promise.resolve(c))})};function S(a,b,d){return t(function*(){var c,e=(c=b.style)==null?void 0:c.getPropertyValue(a);return e?(c=yield R(e,null,d),b.style.setProperty(a,c,b.style.getPropertyPriority(a)),!0):!1})}function na(a,b){return t(function*(){(yield S("background",a,b))||(yield S("background-image",a,b));(yield S("mask",a,b))||(yield S("-webkit-mask",a,b))||(yield S("mask-image",a,b))||(yield S("-webkit-mask-image",a,b))})}
+function oa(a,b){return t(function*(){var d=E(a,HTMLImageElement);if(d&&!H(a.src)||E(a,SVGImageElement)&&!H(a.href.baseVal)){var c=d?a.src:a.href.baseVal,e=yield L(c,M[N(c).toLowerCase()]||"",b);yield new Promise((f,g)=>{a.onload=f;a.onerror=b.m?(...k)=>{try{f(b.m(...k))}catch(m){g(m)}}:g;a.decode&&(a.decode=f);a.loading==="lazy"&&(a.loading="eager");d?(a.srcset="",a.src=e):a.href.baseVal=e})}})}
+function pa(a,b){return t(function*(){var d=w(a.childNodes).map(c=>T(c,b));yield Promise.all(d).then(()=>a)})}function T(a,b){return t(function*(){E(a,Element)&&(yield na(a,b),yield oa(a,b),yield pa(a,b))})};const U={};function V(a){return t(function*(){var b=U[a];if(b!=null)return b;b=yield(yield fetch(a)).text();b={url:a,cssText:b};return U[a]=b})}function W(a,b){return t(function*(){var d=a.cssText,c=/url\(["']?([^"')]+)["']?\)/g,e=(d.match(/url\([^)]+\)/g)||[]).map(f=>t(function*(){var g=f.replace(c,"$1");g.startsWith("https://")||(g=(new URL(g,a.url)).href);return I(g,b.i,({result:k})=>{d=d.replace(f,`url(${k})`);return[f,k]})}));return Promise.all(e).then(()=>d)})}
+function X(a){if(a==null)return[];var b=[];a=a.replace(/(\/\*[\s\S]*?\*\/)/gi,"");for(var d=RegExp("((@.*?keyframes [\\s\\S]*?){([\\s\\S]*?}\\s*?)})","gi");;){var c=d.exec(a);if(c===null)break;b.push(c[0])}a=a.replace(d,"");d=/@import[\s\S]*?url\([^)]*\)[\s\S]*?;/gi;for(c=RegExp("((\\s*?(?:\\/\\*[\\s\\S]*?\\*\\/)?\\s*?@media[\\s\\S]*?){([\\s\\S]*?)}\\s*?})|(([\\s\\S]*?){([\\s\\S]*?)})","gi");;){let e=d.exec(a);if(e===null)if(e=c.exec(a),e===null)break;else d.lastIndex=c.lastIndex;else c.lastIndex=
+d.lastIndex;b.push(e[0])}return b}
+function qa(a,b){return t(function*(){var d=[],c=[];a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach((f,g)=>{if(f.type===CSSRule.IMPORT_RULE){let k=g+1;f=V(f.href).then(m=>W(m,b)).then(m=>X(m).forEach(q=>{try{e.insertRule(q,q.startsWith("@import")?k+=1:e.cssRules.length)}catch(Da){}})).catch(()=>{});c.push(f)}})}catch(f){let g=a.find(k=>k.href==null)||document.styleSheets[0];e.href!=null&&c.push(V(e.href).then(k=>W(k,b)).then(k=>X(k).forEach(m=>{g.insertRule(m,g.cssRules.length)})).catch(()=>
+{}))}});return Promise.all(c).then(()=>{a.forEach(e=>{if("cssRules"in e)try{w(e.cssRules||[]).forEach(f=>{d.push(f)})}catch(f){}});return d})})}function ra(a){return a.filter(b=>b.type===CSSRule.FONT_FACE_RULE).filter(b=>b.style.getPropertyValue("src").search(Q)!==-1)}function sa(a,b){return t(function*(){if(a.ownerDocument==null)throw Error("Provided element is not within a Document");var d=w(a.ownerDocument.styleSheets);d=yield qa(d,b);return ra(d)})}
+function ta(a){function b(c){(c.style.fontFamily||getComputedStyle(c).fontFamily).split(",").forEach(e=>{d.add(e.trim().replace(/["']/g,""))});Array.from(c.children).forEach(e=>{e instanceof HTMLElement&&b(e)})}var d=new Set;b(a);return d}function ua(a,b){return t(function*(){var d=yield sa(a,b),c=ta(a);return(yield Promise.all(d.filter(e=>c.has(e.style.fontFamily.trim().replace(/["']/g,""))).map(e=>R(e.cssText,e.parentStyleSheet?e.parentStyleSheet.href:null,b)))).join("\n")})}
+function va(a,b){return t(function*(){var d=b.j!=null?b.j:b.K?null:yield ua(a,b);if(d){let c=document.createElement("style");c.appendChild(document.createTextNode(d));a.firstChild?a.insertBefore(c,a.firstChild):a.appendChild(c)}})};function wa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield P(a,b,!0);yield va(e,b);yield T(e,b);u(e,b);return yield D(e,d,c)})}
+function xa(a,b={}){return t(function*(){var {width:d,height:c}=A(a,b),e=yield wa(a,b);e=yield B(e);var f=document.createElement("canvas"),g=f.getContext("2d"),k=b.G||window.devicePixelRatio||1,m=b.h||d,q=b.g||c;f.width=m*k;f.height=q*k;!b.J&&(f.width>16384||f.height>16384)&&(f.width>16384&&f.height>16384?f.width>f.height?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384):f.width>16384?(f.height*=16384/f.width,f.width=16384):(f.width*=16384/f.height,f.height=16384));
+f.style.width=`${m}`;f.style.height=`${q}`;b.backgroundColor&&(g.fillStyle=b.backgroundColor,g.fillRect(0,0,f.width,f.height));g.drawImage(e,0,0,f.width,f.height);return f})}function ya(a,b={}){return t(function*(){return(yield xa(a,b)).toDataURL()})};const za=["gemini.google.com","corp.google.com","proxy.googlers.com"];function Y(){return document.body.querySelectorAll('[class*="animate"]').length>0}function Z(a){return t(function*(){try{return yield ya(a,{h:a.offsetWidth,g:a.offsetHeight})}catch(d){var b=a.offsetHeight;let c=document.createElement("canvas");c.width=a.offsetWidth;c.height=b;return c.toDataURL("image/png")}})}
+function Aa(){return t(function*(){var a=document.body.offsetWidth,b=document.body.offsetHeight,d=document.body.cloneNode(!0);d.querySelectorAll('[class*="animate"]').forEach(c=>{c.classList.remove(...Array.from(c.classList).filter(e=>e.startsWith("animate")))});d.style.width=`${a}px`;d.style.height=`${b}px`;return d})}
+function Ba(a){return t(function*(){var b=document.body;if(Y()){var d=yield Aa();b=d;document.body.appendChild(d)}d=yield Z(b);Y()&&document.body.removeChild(b);window.parent.postMessage({type:"SEND_SCREENSHOT",image:d,topOffset:document.documentElement.scrollTop},a.origin)})}function Ca(a){return t(function*(){var b={type:"SEND_SCREENSHOT_FOR_DATA_VISUALIZATION",image:yield Z(document.body),topOffset:0};window.parent.postMessage(b,a.origin)})}
+window.addEventListener("message",a=>t(function*(){if(za.some(d=>a.origin.includes(d))){var b=a.data;b&&(b.type==="MAKE_SCREENSHOT"&&(yield Ba(a)),b.type==="MAKE_SCREENSHOT_FOR_DATA_VISUALIZATION"&&(yield Ca(a)))}}));
+})();</script><script>(function() {
+  // Ensure this script is executed only once
+  if (window.firebaseAuthBridgeScriptLoaded) {
+    return;
+  }
+  window.firebaseAuthBridgeScriptLoaded = true;
+
+  let nextTokenPromiseId = 0;
+
+  // Stores { resolve, reject } for ongoing token requests
+  const pendingTokenPromises = {};
+
+  // Listen for messages from the Host Application
+  window.addEventListener('message', function(event) {
+
+    const messageData = event.data;
+
+  if (messageData && messageData.type === 'RESOLVE_NEW_FIREBASE_TOKEN') {
+      const { success, token, error, promiseId } = messageData ?? {};
+      if (pendingTokenPromises[promiseId]) {
+        if (success) {
+          pendingTokenPromises[promiseId].resolve(token);
+        } else {
+          pendingTokenPromises[promiseId].reject(new Error(error || 'Token refresh failed from host.'));
+        }
+        delete pendingTokenPromises[promiseId];
+      }
+    }
+  });
+
+  // Expose a function for the Generated App to request a new Firebase token
+  window.requestNewFirebaseToken = function() {
+    const currentPromiseId = nextTokenPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingTokenPromises[currentPromiseId] = { resolve, reject };
+    });
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({
+        type: 'REQUEST_NEW_FIREBASE_TOKEN',
+        promiseId: currentPromiseId
+      }, '*');
+    } else {
+      pendingTokenPromises[currentPromiseId].reject(new Error('No parent window to request token from.'));
+      delete pendingTokenPromises[currentPromiseId];
+    }
+    return promise;
+  };
+})();</script><script>
+let realOriginalGetUserMedia = null;
+if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+  realOriginalGetUserMedia = navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
+}
+
+(function() {
+  if (navigator.mediaDevices && navigator.mediaDevices.__proto__) {
+    try {
+      Object.defineProperty(navigator.mediaDevices.__proto__, 'getUserMedia', {
+        get: function() {
+          return undefined; // Or throw an error
+        },
+        configurable: false
+      });
+    } catch (error) {
+      console.error("Error defining prototype getter:", error);
+    }
+  }
+})();
+
+(function() {
+  const pendingMediaResolvers = {};
+  let nextMediaPromiseId = 0;
+
+  function requestMediaPermissions(constraints) {
+    const mediaPromiseId = nextMediaPromiseId++;
+    const promise = new Promise((resolve, reject) => {
+      pendingMediaResolvers[mediaPromiseId] = (granted) => {
+        delete pendingMediaResolvers[mediaPromiseId];
+        resolve(granted);
+      };
+    });
+
+    window.parent.postMessage({
+      type: 'requestMediaPermission',
+      constraints: constraints,
+      promiseId: mediaPromiseId,
+    }, '*');
+
+    return promise;
+  }
+
+  let originalGetUserMedia = realOriginalGetUserMedia;
+
+  function interceptGetUserMedia() {
+    if (navigator.mediaDevices) {
+      Object.defineProperty(navigator.mediaDevices, 'getUserMedia', {
+        value: function(constraints) {
+          return requestMediaPermissions(constraints).then((granted) => {
+            if (granted) {
+              if (originalGetUserMedia) {
+                return originalGetUserMedia(constraints);
+              } else {
+                throw new Error("Original getUserMedia not available.");
+              }
+            } else {
+              throw new DOMException('Permission denied', 'NotAllowedError');
+            }
+          });
+        },
+        writable: false,
+        configurable: false
+      });
+    }
+  }
+
+  interceptGetUserMedia();
+
+  const observer = new MutationObserver(function(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+      if (mutation.type === 'reconfigured' && mutation.name === 'getUserMedia' && mutation.object === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'attributes' && mutation.attributeName === 'getUserMedia' && mutation.target === navigator.mediaDevices) {
+        interceptGetUserMedia();
+      } else if (mutation.type === 'childList' && mutation.addedNodes) {
+        mutation.addedNodes.forEach(node => {
+          if (node === navigator.mediaDevices) {
+            interceptGetUserMedia();
+          }
+        });
+      }
+    }
+  });
+
+  function interceptSpeechRecognition() {
+    if (!window.SpeechRecognition && !window.webkitSpeechRecognition) {
+      return;
+    }
+
+    const OriginalSpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    const SpeechRecognitionWrapper = function(...args) {
+      const recognizer = new OriginalSpeechRecognition(...args);
+      const originalStart = recognizer.start.bind(recognizer);
+
+      recognizer.start = function() {
+        requestMediaPermissions({ audio: true }).then(granted => {
+          if (granted) {
+            originalStart();
+          } else {
+            const errorEvent = new SpeechRecognitionErrorEvent('error');
+            errorEvent.error = 'not-allowed'; // This is the standard error for permission denial.
+            recognizer.dispatchEvent(errorEvent);
+          }
+        });
+      };
+
+      return recognizer;
+    };
+
+    SpeechRecognitionWrapper.prototype = OriginalSpeechRecognition.prototype;
+    SpeechRecognitionWrapper.prototype.constructor = SpeechRecognitionWrapper;
+
+    if (window.SpeechRecognition) {
+      window.SpeechRecognition = SpeechRecognitionWrapper;
+    }
+    if (window.webkitSpeechRecognition) {
+      window.webkitSpeechRecognition = SpeechRecognitionWrapper;
+    }
+  }
+
+  interceptSpeechRecognition();
+
+  window.addEventListener('message', function(event) {
+    if (event.data) {
+      if (event.data.type === 'resolveMediaPermission') {
+        const { promiseId, granted } = event.data;
+        if (pendingMediaResolvers[promiseId]) {
+          pendingMediaResolvers[promiseId](granted);
+        }
+      }
+    }
+  });
+
+})();</script><script ws-interception-config="{&quot;parentOrigin&quot;:&quot;https://gemini.google.com&quot;,&quot;proxiedDomains&quot;:[]}">(function(){'use strict';var u=typeof Object.defineProperties=="function"?Object.defineProperty:function(b,d,e){if(b==Array.prototype||b==Object.prototype)return b;b[d]=e.value;return b};function v(b){b=["object"==typeof globalThis&&globalThis,b,"object"==typeof window&&window,"object"==typeof self&&self,"object"==typeof global&&global];for(var d=0;d<b.length;++d){var e=b[d];if(e&&e.Math==Math)return e}throw Error("Cannot find global object");}var w=v(this);
+function y(b,d){if(d)a:{var e=w;b=b.split(".");for(var h=0;h<b.length-1;h++){var k=b[h];if(!(k in e))break a;e=e[k]}b=b[b.length-1];h=e[b];d=d(h);d!=h&&d!=null&&u(e,b,{configurable:!0,writable:!0,value:d})}}function z(b){function d(h){return b.next(h)}function e(h){return b.throw(h)}return new Promise(function(h,k){function m(n){n.done?h(n.value):Promise.resolve(n.value).then(d,e).then(m,k)}m(b.next())})}y("globalThis",function(b){return b||w});/*
+
+ Copyright The Closure Library Authors.
+ SPDX-License-Identifier: Apache-2.0
+*/
+function A(b,d){function e(){}e.prototype=d.prototype;b.i=d.prototype;b.prototype=new e;b.prototype.constructor=b;b.g=function(h,k,m){for(var n=Array(arguments.length-2),p=2;p<arguments.length;p++)n[p-2]=arguments[p];return d.prototype[k].apply(h,n)}};function B(b,d,e="*"){function h(a){if(typeof a==="string")return F.encode(a).buffer;if(a instanceof ArrayBuffer)return a.slice(0);if(ArrayBuffer.isView(a))return a.buffer.slice(a.byteOffset,a.byteOffset+a.byteLength);throw Error("Invalid data type");}function k(a){a=h(a);var f={type:"send",data:new Uint8Array(a)},g;(g=r)==null||g.postMessage(f,[a])}function m(){if(!r)throw Error("Data port not captured yet.");r.onmessage=a=>{if(a.data.type==="message"){a=new MessageEvent("message",{data:G.decode(a.data.data)});
+let f;(f=c.onmessage)==null||f.call(c,a);c.dispatchEvent(a)}}}function n(){if(!t)throw Error("Control port not captured yet.");t.onmessage=a=>{switch(a.data.type){case "open":l=1;var f=new Event("open"),g;(g=c.onopen)==null||g.call(c,f);c.dispatchEvent(f);q.forEach(H=>{k(H)});q=[];break;case "close":g=a.data;l=3;g=new CloseEvent("close",{code:g.code,reason:g.reason,wasClean:g.wasClean});(f=c.onclose)==null||f.call(c,g);c.dispatchEvent(g);break;case "error":l=3;f=new Event("error");let x;(x=c.onerror)==
+null||x.call(c,f);c.dispatchEvent(f)}}}function p(a){return z(function*(){var f=new MessageChannel;t=f.port1;var g=new MessageChannel;r=g.port1;n();m();window.parent.postMessage({type:"websocket_open",portOrdering:["control","data"],url:b,protocols:a||[],connectionId:I},e,[f.port2,g.port2])}())}var c=Reflect.construct(EventTarget,[],new.target);c.CONNECTING=0;c.OPEN=1;c.CLOSING=2;c.CLOSED=3;c.url=b;c.binaryType="arraybuffer";c.protocol="";c.h="";var l=0,t=null,r=null,q=[],F=new TextEncoder,G=new TextDecoder;
+c.onopen=null;c.onmessage=null;c.onclose=null;c.onerror=null;Object.defineProperty(c,"readyState",{get:()=>l,enumerable:!0,configurable:!0});Object.defineProperty(c,"bufferedAmount",{get:()=>{var a=0;q.forEach(f=>{a+=typeof f==="string"?f.length:f.byteLength});return a},enumerable:!0,configurable:!0});var I=function(){var a;return((a=globalThis.crypto)==null?0:a.randomUUID)?globalThis.crypto.randomUUID():"xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,f=>{var g=Math.random()*16|0;return(f===
+"x"?g:g&3|8).toString(16)})}();c.send=a=>{if(l===1)a instanceof Blob?a.arrayBuffer().then(f=>{k(f)}):k(a);else if(l===0)if(typeof a==="string")q.push(a);else if(a instanceof ArrayBuffer||ArrayBuffer.isView(a))q.push(h(a));else throw Error("Sending Blob is not supported before the connection is open.");else console.debug("WebSocket send called in CLOSING or CLOSED state; ignored.")};c.close=(a=1E3,f="")=>{if(l!==2&&l!==3){l=2;a={type:"close",code:a,reason:f,wasClean:a===1E3};var g;(g=t)==null||g.postMessage(a)}};
+Promise.resolve().then(()=>p(d));return c}A(B,EventTarget);var C=document.currentScript,D=C==null?void 0:C.getAttribute("ws-interception-config");if(!D)throw Error("WebSocket Interceptor: Missing ws-interception-config attribute in the script tag.");var E=JSON.parse(D);if(!E.parentOrigin||typeof E.parentOrigin!=="string")throw Error("WebSocket Interceptor: Invalid parentOrigin in ws-interception-config");
+(function(b){var d=Object.getOwnPropertyDescriptor(window,"WebSocket");if(!d||d.writable||d.configurable)d=Object.assign(function(e,h){try{let k=(new URL(e)).hostname;if(b.proxiedDomains.some(m=>k===m||k.endsWith(`.${m}`)))return new B(e,h,b.parentOrigin)}catch(k){throw window.parent.postMessage({type:"websocket_blocked",url:e,reason:"blocked_invalid_url"},b.parentOrigin),new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");}window.parent.postMessage({type:"websocket_blocked",
+url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMException(`WebSocket connection to '${e}' is not allowed in Canvas.`,"SecurityError");},{CONNECTING:0,OPEN:1,CLOSING:2,CLOSED:3}),Object.defineProperty(window,"WebSocket",{value:d,writable:!1,configurable:!1})})({proxiedDomains:E.proxiedDomains||[],parentOrigin:E.parentOrigin});}).call(this);
+</script><script>((function(modelInformation) {
+  const originalFetch = window.fetch;
+  // TODO: b/421908508 - Move these out of the script and match all generative AI model calls.
+  let googleLlmBaseApiUrls = [
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':streamGenerateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.textModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageEditModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.imageTransformModelName + ':generateContent',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predict',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.videoModelName + ':predictLongRunning',
+    'https://generativelanguage.googleapis.com/v1beta/models/' + modelInformation.ttsModelName + ':generateContent',
+  ];
+  modelInformation.deprecatedTextModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+    );
+  });
+  modelInformation.deprecatedImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predict',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':predictLongRunning',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+  modelInformation.deprecatedGenerateImageModelNames.forEach((modelName) => {
+    googleLlmBaseApiUrls.push(
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':generateContent',
+      'https://generativelanguage.googleapis.com/v1beta/models/' + modelName + ':streamGenerateContent',
+    );
+  });
+
+  const pendingFetchResolvers = {};
+  let nextPromiseId = 0;
+
+  function handleStringInput(input, optionsArgument) {
+    const actualUrl = input;
+    const fetchCallArgs = [actualUrl, optionsArgument];
+    const effectiveOptions = optionsArgument || {};
+    const bodyForApiKeyCheck = effectiveOptions.body;
+    const bodyForPostMessage = effectiveOptions.body;
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  function handleRequestInput(input, optionsArgument) {
+    const actualUrl = input.url;
+    const fetchCallArgs = [input, optionsArgument];
+    const effectiveOptions = { method: input.method, headers: new Headers(input.headers) };
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (optionsArgument) {
+      if (optionsArgument.method) effectiveOptions.method = optionsArgument.method;
+      if (optionsArgument.headers) effectiveOptions.headers = new Headers(optionsArgument.headers);
+      if ('body' in optionsArgument) {
+        bodyForApiKeyCheck = optionsArgument.body;
+        bodyForPostMessage = optionsArgument.body;
+      } else {
+        bodyForApiKeyCheck = undefined;
+        bodyForPostMessage = input.body;
+      }
+    } else {
+      bodyForApiKeyCheck = undefined;
+      bodyForPostMessage = input.body;
+    }
+    return { actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage };
+  }
+
+  window.fetch = function(input, optionsArgument) {
+    let actualUrl;
+    let fetchCallArgs;
+    let effectiveOptions = {};
+    let bodyForApiKeyCheck;
+    let bodyForPostMessage;
+
+    if (typeof input === 'string') {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleStringInput(input, optionsArgument));
+    } else if (input instanceof Request) {
+      ({actualUrl, fetchCallArgs, effectiveOptions, bodyForApiKeyCheck, bodyForPostMessage} = handleRequestInput(input, optionsArgument));
+    } else {
+      return originalFetch.apply(window, [input, optionsArgument]);
+    }
+
+    effectiveOptions.method = effectiveOptions.method || 'GET';
+    if (!effectiveOptions.headers) {
+      effectiveOptions.headers = new Headers();
+    }
+
+
+    if (typeof actualUrl === 'string' && googleLlmBaseApiUrls.some((url) => actualUrl.startsWith(url))) {
+      let apiKeyIsNull = true;
+
+      const regex = new RegExp("models/([^:]+)");
+      const modelNameMatch = actualUrl.match(regex);
+      const modelName = modelNameMatch ? modelNameMatch[1] : 'unspecified';
+
+
+      try {
+        const urlObject = new URL(actualUrl);  // Use URL object for robust parsing
+        const apiKeyParam = urlObject.searchParams.get('key');
+        if (apiKeyParam) {
+          apiKeyIsNull = false;
+        }
+      } catch (e) {
+        // Continue checks even if URL parsing fails
+      }
+
+      if (apiKeyIsNull && effectiveOptions.headers) {
+        const h = new Headers(effectiveOptions.headers);
+        const apiKeyHeaderValue = h.get('X-API-Key') || h.get('x-api-key');
+        if (apiKeyHeaderValue) {
+          apiKeyIsNull = false;
+          return originalFetch.apply(window, fetchCallArgs);
+        }
+      }
+
+      if (apiKeyIsNull && effectiveOptions.method && ['POST', 'PUT', 'PATCH'].includes(effectiveOptions.method.toUpperCase()) && typeof bodyForApiKeyCheck === 'string') {
+        try {
+          const bodyData = JSON.parse(bodyForApiKeyCheck);
+          if (bodyData && bodyData.apiKey) {
+            apiKeyIsNull = false;
+            return originalFetch.apply(window, fetchCallArgs);
+          }
+        } catch (e) {
+          // Ignore JSON parsing errors
+        }
+      }
+
+      if(apiKeyIsNull) {
+        const promiseId = nextPromiseId++;
+        const promise = new Promise((resolve) => {
+          pendingFetchResolvers[promiseId] = (resolvedResponse) => {
+            delete pendingFetchResolvers[promiseId];
+            resolve(resolvedResponse);
+          };
+        });
+
+        let serializedBodyForPostMessage;
+        if (typeof bodyForPostMessage === 'string' || bodyForPostMessage == null) {
+            serializedBodyForPostMessage = bodyForPostMessage;
+        } else if (bodyForPostMessage instanceof ReadableStream) {
+            serializedBodyForPostMessage = null;
+        } else {
+            try {
+                serializedBodyForPostMessage = JSON.stringify(bodyForPostMessage);
+            } catch (e) {
+                serializedBodyForPostMessage = null;
+            }
+        }
+
+        const messageOptions = {
+            method: effectiveOptions.method,
+            headers: Object.fromEntries(new Headers(effectiveOptions.headers).entries()),
+            body: serializedBodyForPostMessage
+        };
+
+        window.parent.postMessage({
+          type: 'requestFetch',
+          url: actualUrl,
+          modelName: modelName,
+          options: messageOptions,
+          promiseId: promiseId,
+        }, '*');
+
+        return promise;
+      }
+      return originalFetch.apply(window, fetchCallArgs);
+    }
+    return originalFetch.apply(window, fetchCallArgs);
+  };
+
+  window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'resolveFetch') {
+      const { promiseId, response } = event.data;
+      if (pendingFetchResolvers[promiseId]) {
+        try {
+          const reconstructedResponse = new Response(response.body, {
+            status: response.status,
+            statusText: response.statusText,
+            headers: new Headers(response.headers),
+          });
+          pendingFetchResolvers[promiseId](reconstructedResponse);
+        } catch (error) {
+          pendingFetchResolvers[promiseId](new Response(null, { status: 500, statusText: "Interceptor Response Reconstruction Error" }));
+        }
+      }
+    }
+  });
+
+}))({"textModelName":"gemini-3-flash-preview","imageModelName":"imagen-4.0-generate-001","imageEditModelName":"gemini-3.1-flash-image-preview","imageTransformModelName":"gemini-3-pro-image-preview-11-2025","videoModelName":"veo-2.0-generate-001","ttsModelName":"gemini-2.5-flash-preview-tts","deprecatedTextModelNames":["gemini-2.0-flash","gemini-2.5-flash","gemini-2.5-flash-preview-04-17","gemini-2.5-flash-preview-05-20","gemini-2.5-flash-preview-09-2025"],"deprecatedImageModelNames":["imagen-3.0-generate-001","imagen-3.0-generate-002"],"deprecatedGenerateImageModelNames":["gemini-2.5-flash-image-preview","gemini-2.5-flash-image"]})</script><script>(function(){'use strict';function a(){window.parent.postMessage({type:"interaction"},"*")}window.addEventListener("click",a,{capture:!0,passive:!0});window.addEventListener("touchstart",a,{capture:!0,passive:!0});window.addEventListener("keydown",a,{capture:!0,passive:!0});}).call(this);
+</script><script>(function() {
+  const originalConsoleLog = console.log;
+  const originalConsoleError = console.error;
+
+    /**
+   * Normalizes an error event or a promise rejection reason into a structured error object.
+   * @param {*} errorEventOrReason The error object or reason.
+   * @return {object} Structured error data { message, name, stack }.
+   */
+  function getErrorObject(errorEventOrReason) {
+    if (errorEventOrReason instanceof Error) {
+      return {
+        message: errorEventOrReason.message,
+        name: errorEventOrReason.name,
+        stack: errorEventOrReason.stack,
+      };
+    }
+    // Fallback for non-Error objects.
+    try {
+      return {
+        message: JSON.stringify(errorEventOrReason),
+        name: 'UnknownErrorType',
+        stack: null,
+      };
+    } catch (e) {
+      return {
+        message: String(errorEventOrReason),
+        name: 'UnknownErrorTypeNonStringifiable',
+        stack: null,
+      };
+    }
+  }
+
+  /**
+   * Converts an array of arguments (from log/error) into a single string.
+   * Handles Error objects specially to include their message and stack.
+   * @param {Array<*>} args - Arguments passed to console methods.
+   * @return {string} A string representation of the arguments.
+   */
+  function stringifyArgs(args) {
+    return args
+      .map((arg) => {
+        if (arg instanceof Error) {
+          const {message, stack} = arg;
+          return `Error: ${message}${stack ? ('\nStack: ' + stack) : ''}`;
+        }
+        if (typeof arg === 'object' && arg !== null) {
+          try {
+            return JSON.stringify(arg);
+          } catch (error) {
+            return '[Circular Object]';
+          }
+        } else {
+          return String(arg);
+        }
+      })
+      .join(' ');
+  }
+
+  console.log = function(...args) {
+    const logString = stringifyArgs(args);
+    window.parent.postMessage({ type: 'log', message: logString }, '*');
+    originalConsoleLog.apply(console, args);
+  };
+
+  console.error = function(...args) {
+    let errorData;
+    if (args.length > 0 && args[0] instanceof Error) {
+      const err = args[0];
+      // If the first arg is an Error, capture its details.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        ...getErrorObject(err),
+        rawArgsString: stringifyArgs(args.slice(1)),
+        timestamp: new Date().toISOString(),
+      };
+    } else {
+      // If not an Error object, treat all args as a general error message.
+      errorData = {
+        type: 'error',
+        source: 'CONSOLE_ERROR',
+        message: stringifyArgs(args),
+        name: 'ConsoleLoggedError',
+        stack: null,
+        timestamp: new Date().toISOString(),
+      };
+    }
+    window.parent.postMessage(errorData, '*');
+    originalConsoleError.apply(console, args);
+  };
+
+  // Listen for global unhandled synchronous errors.
+  window.addEventListener('error', function(event) {
+    const errorDetails = event.error ? getErrorObject(event.error) : {
+      message: event.message,
+      name: 'GlobalError',
+      stack: null,
+      filename: event.filename,
+      lineno: event.lineno,
+      colno: event.colno,
+    };
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'global',
+      ...errorDetails,
+      message: errorDetails.message || event.message,
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+  // Listen for unhandled promise rejections (asynchronous errors).
+  window.addEventListener('unhandledrejection', function(event) {
+    const errorDetails = getErrorObject(event.reason);
+
+    window.parent.postMessage({
+      type: 'error',
+      source: 'unhandledrejection',
+      ...errorDetails,
+      message: errorDetails.message || 'Unhandled Promise Rejection',
+      timestamp: new Date().toISOString(),
+    }, '*');
+  });
+
+})();</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hệ Thống Ôn Tập Trắc Nghiệm Toán 9</title>
+    
+    <!-- Cấu hình MathJax -->
+    <script>
+        window.MathJax = {
+            tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+            startup: { typeset: false }
+        };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" crossorigin="anonymous"></script>
+    
+    <!-- Tích hợp thư viện PDF.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js" crossorigin="anonymous"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+    </script>
+
+    <style>
+        :root {
+            --primary: #2b6cb0; --primary-light: #ebf8ff; --success: #38a169;
+            --danger: #e53e3e; --warning: #d69e2e; --bg-color: #edf2f7;
+            --text-main: #2d3748; --border-color: #cbd5e0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color); color: var(--text-main);
+            line-height: 1.6; margin: 0; padding: 15px;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
+        }
+        .container {
+            width: 100%; max-width: 850px; background: #ffffff;
+            padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .hidden { display: none !important; }
+        .text-center { text-align: center; }
+        .btn {
+            padding: 12px 20px; border: none; border-radius: 8px; font-size: 1.1em;
+            font-weight: bold; cursor: pointer; transition: all 0.2s; color: white;
+            display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+        }
+        .btn-primary { background-color: var(--primary); }
+        .btn-primary:hover { background-color: #2c5282; }
+        .btn-success { background-color: var(--success); }
+        .btn-success:hover { background-color: #2f855a; }
+        .btn-warning { background-color: var(--warning); color: #fff;}
+        .btn-warning:hover { background-color: #b7791f; }
+        .btn-danger { background-color: var(--danger); }
+        .btn-danger:hover { background-color: #c53030; }
+        .btn-outline { background-color: transparent; border: 2px solid var(--primary); color: var(--primary); }
+        .btn-outline:hover { background-color: var(--primary-light); }
+        .btn-sm { padding: 8px 12px; font-size: 0.9em; }
+
+        .select-box {
+            width: 100%; padding: 15px; font-size: 1.1em; border: 2px solid var(--border-color);
+            border-radius: 8px; outline: none; background: #fff; box-sizing: border-box;
+        }
+        .select-box:focus { border-color: var(--primary); }
+
+        .header { text-align: center; margin-bottom: 20px; padding-bottom: 15px; border-bottom: 2px solid var(--border-color); }
+        h1 { color: var(--primary); margin: 0 0 5px 0; font-size: 1.8em;}
+        .progress-container { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; font-weight: bold; color: #718096; }
+        .progress-bar { flex-grow: 1; height: 8px; background: #edf2f7; border-radius: 4px; margin: 0 15px; overflow: hidden; }
+        .progress-fill { height: 100%; background: var(--primary); width: 0%; transition: width 0.3s ease; }
+        .question-box { font-size: 1.15em; font-weight: 600; margin-bottom: 20px; }
+        .options-list { list-style: none; padding: 0; margin: 0 0 25px 0; display: flex; flex-direction: column; gap: 12px; }
+        .option-item { border: 2px solid var(--border-color); border-radius: 8px; padding: 12px 15px; cursor: pointer; transition: all 0.2s; background: #fff; display: flex; align-items: center; }
+        .option-item:hover:not(.disabled) { background: #edf2f7; border-color: #a0aec0; }
+        .option-item.selected { border-color: var(--primary); background: var(--primary-light); }
+        .option-item.correct { border-color: var(--success); background: #f0fff4; }
+        .option-item.wrong { border-color: var(--danger); background: #fff5f5; }
+        .option-item.disabled { cursor: not-allowed; opacity: 0.8; }
+        .option-item input[type="radio"] { display: none; }
+        .opt-label { font-weight: bold; margin-right: 10px; width: 25px; height: 25px; display: inline-flex; align-items: center; justify-content: center; background: #edf2f7; border-radius: 50%; font-size: 0.9em;}
+        .selected .opt-label { background: var(--primary); color: white; }
+        .correct .opt-label { background: var(--success); color: white; }
+        .wrong .opt-label { background: var(--danger); color: white; }
+        
+        .feedback-box { display: none; padding: 20px; border-radius: 8px; margin-bottom: 25px; animation: fadeIn 0.4s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        .feedback-box.show { display: block; }
+        .feedback-box.is-correct { background-color: #f0fff4; border: 1px solid #9ae6b4; }
+        .feedback-box.is-wrong { background-color: #fff5f5; border: 1px solid #feb2b2; }
+        .feedback-title { font-weight: bold; font-size: 1.2em; margin-bottom: 10px;}
+        .is-correct .feedback-title { color: var(--success); }
+        .is-wrong .feedback-title { color: var(--danger); }
+        .explanation-content { background: rgba(255,255,255,0.7); padding: 15px; border-radius: 6px; border-left: 4px solid var(--primary); margin-top: 10px; overflow-x: auto;}
+        
+        .buttons-row { display: flex; gap: 15px; }
+        .buttons-row .btn { flex: 1; padding: 15px;}
+        .btn:disabled { background-color: #a0aec0; cursor: not-allowed; }
+
+        .admin-nav { display: flex; border-bottom: 2px solid var(--border-color); margin-bottom: 20px; }
+        .admin-tab { padding: 10px 20px; cursor: pointer; font-weight: bold; color: #718096; border-bottom: 3px solid transparent; transition: all 0.2s;}
+        .admin-tab.active { color: var(--primary); border-bottom-color: var(--primary); }
+        .admin-section-card { background: #f7fafc; border: 1px solid var(--border-color); padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .admin-section-title { font-size: 1.2em; font-weight: bold; margin-top: 0; margin-bottom: 15px; display: flex; align-items: center; gap: 8px;}
+        .admin-textarea { width: 100%; height: 180px; padding: 15px; font-family: monospace; font-size: 14px; border: 2px solid var(--border-color); border-radius: 8px; resize: vertical; box-sizing: border-box; margin-bottom: 10px; }
+        .file-upload-wrapper { position: relative; overflow: hidden; display: inline-block; margin-bottom: 10px;}
+        .file-upload-wrapper input[type=file] { font-size: 100px; position: absolute; left: 0; top: 0; opacity: 0; cursor: pointer; }
+        .pdf-helper { background-color: #fffaf0; border: 2px dashed #ed8936; padding: 15px; border-radius: 8px; margin-top: 15px;}
+        
+        .edit-question-card { background: #f7fafc; border: 1px solid var(--border-color); padding: 15px; border-radius: 8px; margin-bottom: 15px; }
+        .edit-img-input { width: 100%; padding: 10px; margin-top: 10px; border: 1px solid #cbd5e0; border-radius: 6px; outline: none; box-sizing: border-box;}
+        .edit-img-input:focus { border-color: var(--primary); }
+
+        .score-circle { width: 150px; height: 150px; border-radius: 50%; background: var(--primary-light); border: 8px solid var(--primary); display: flex; align-items: center; justify-content: center; font-size: 2.5em; font-weight: bold; color: var(--primary); margin: 0 auto 25px auto; }
+        .image-placeholder { display: flex; flex-direction: column; align-items: center; background-color: #edf2f7; border: 2px dashed #a0aec0; border-radius: 8px; padding: 10px; margin: 15px 0; text-align: center;}
+        .image-placeholder img { max-width: 100%; height: auto; display: none; border-radius: 6px;}
+        .image-placeholder.has-image img { display: block; }
+
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; justify-content: center; align-items: center; }
+        .modal-content { background: #fff; padding: 30px; border-radius: 12px; width: 90%; max-width: 400px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.2); animation: fadeIn 0.3s ease; }
+        
+        #loading-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255,255,255,0.9); z-index: 500; display: flex; flex-direction: column; justify-content: center; align-items: center; border-radius: 12px; }
+        .spinner { border: 6px solid #f3f3f3; border-top: 6px solid var(--primary); border-radius: 50%; width: 50px; height: 50px; animation: spin 1s linear infinite; margin-bottom: 15px;}
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    </style>
+<style type="text/css">.CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+</style><style type="text/css">.CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+</style><style type="text/css">.CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+</style></head>
+<body>
+
+<!-- MÀN HÌNH XÁC THỰC -->
+<div id="auth-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <h2 style="margin-top: 0; color: var(--primary);">🔐 Xác Thực Giáo Viên</h2>
+        <p style="color: #718096; font-size: 0.9em; margin-bottom: 20px;">Vui lòng nhập mật khẩu để vào trang quản lý</p>
+        <input type="password" id="admin-password" class="select-box" style="margin-bottom: 15px; text-align: center; font-size: 1.2em; padding: 10px;" placeholder="Nhập mật khẩu..." onkeypress="handlePasswordEnter(event)">
+        <div style="display: flex; gap: 10px;">
+            <button class="btn btn-outline" style="flex: 1;" onclick="hideModal('auth-modal')">Hủy</button>
+            <button class="btn btn-primary" style="flex: 1;" onclick="checkPassword()">Xác nhận</button>
+        </div>
+        <p id="auth-error" style="color: var(--danger); font-size: 0.9em; margin-top: 15px; font-weight: bold; height: 15px;"></p>
+    </div>
+</div>
+
+<!-- MÀN HÌNH XÓA ĐỀ -->
+<div id="delete-modal" class="modal-overlay hidden">
+    <div class="modal-content">
+        <h2 style="margin-top: 0; color: var(--danger);">⚠️ Xác Nhận Xóa Đề</h2>
+        <p style="color: var(--text-main); margin-bottom: 25px;">Bạn có chắc chắn muốn xóa vĩnh viễn đề này không?</p>
+        <div style="display: flex; gap: 10px;">
+            <button class="btn btn-outline" style="flex: 1;" onclick="hideModal('delete-modal')">Giữ lại</button>
+            <button class="btn btn-danger" style="flex: 1;" onclick="executeDeleteTest()">Xóa luôn</button>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    
+    <!-- MÀN HÌNH 1: CHỌN ĐỀ THI -->
+    <div id="start-screen" class="">
+        <h1 class="text-center" style="font-size: 2.2em; margin-bottom: 10px;">Ôn Tập Toán 9</h1>
+        <p class="text-center" style="color: #718096; margin-bottom: 30px;">Hệ thống kiểm tra Trắc nghiệm Khách quan</p>
+        
+        <div style="background: #f7fafc; padding: 25px; border-radius: 10px; border: 1px solid #e2e8f0;">
+            <label for="test-selector" style="font-weight: bold; font-size: 1.1em; display: block; margin-bottom: 10px;">📚 Chọn bài kiểm tra:</label>
+            <select id="test-selector" class="select-box" style="margin-bottom: 25px;"><option value="kien_giang_tuyen_tap">Đề năm học 2024-2025</option><option value="custom_test_1778836899598">Đề năm học 2023-2024</option></select>
+            <button class="btn btn-primary" style="width: 100%; padding: 15px; font-size: 1.2em;" onclick="startQuiz()">Bắt đầu làm bài 🚀</button>
+        </div>
+
+        <div class="text-center" style="margin-top: 30px;">
+            <button class="btn btn-outline" onclick="promptAdminPassword()">⚙️ Chế độ Giáo Viên (Quản lý Đề)</button>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH 2: LÀM BÀI TRẮC NGHIỆM -->
+    <div id="quiz-screen" class="hidden">
+        <div class="header">
+            <h1 id="quiz-title-display">Tên Đề Thi</h1>
+        </div>
+
+        <div class="progress-container">
+            <span id="q-current">Câu 1</span>
+            <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+            <span id="q-total">/ 15</span>
+        </div>
+
+        <div id="question-area"></div>
+
+        <div id="feedback-area" class="feedback-box">
+            <div class="feedback-title" id="feedback-title"></div>
+            <div id="correct-answer-display" style="font-weight: bold; margin-bottom: 10px;"></div>
+            <div class="explanation-content">
+                <strong><ins>Hướng dẫn giải chi tiết:</ins></strong><br>
+                <div id="explanation-text" style="margin-top: 8px;"></div>
+            </div>
+        </div>
+
+        <div class="buttons-row">
+            <button class="btn btn-primary" id="btn-submit" onclick="checkAnswer()">Trả lời</button>
+            <button class="btn btn-warning hidden" id="btn-next" onclick="nextQuestion()">Tiếp tục ⏭</button>
+            <button class="btn btn-success hidden" id="btn-finish" onclick="showResults()">Xem điểm tổng kết 🏆</button>
+        </div>
+    </div>
+
+    <!-- MÀN HÌNH 3: KẾT QUẢ -->
+    <div id="results-screen" class="hidden text-center">
+        <h1 style="font-size: 2em; margin-bottom: 20px;">Hoàn Thành Bài Thi!</h1>
+        <div class="score-circle" id="final-score-text">0/15</div>
+        <h2 id="feedback-msg" style="color: var(--text-main);"></h2>
+        <p style="color: #718096; margin-bottom: 30px;">Cảm ơn bạn đã nỗ lực hết mình!</p>
+        <button class="btn btn-primary" style="padding: 15px 40px;" onclick="location.reload()">🔄 Quay lại Trang chủ</button>
+    </div>
+
+    <!-- MÀN HÌNH 4: CHẾ ĐỘ GIÁO VIÊN -->
+    <div id="admin-screen" class="relative hidden">
+        <div id="loading-overlay" class="hidden">
+            <div class="spinner"></div>
+            <h3 style="color: var(--primary);">Đang phân tích file PDF...</h3>
+            <p>Vui lòng đợi trong giây lát</p>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+            <h1 style="margin: 0; font-size: 1.8em;">⚙️ Quản Lý Đề Thi</h1>
+            <button class="btn btn-outline btn-sm" onclick="hideAdminScreen()">❌ Thoát</button>
+        </div>
+
+        <div class="admin-nav">
+            <div class="admin-tab" id="tab-btn-add" onclick="switchAdminTab('add')">➕ Thêm Đề Mới</div>
+            <div class="admin-tab" id="tab-btn-edit" onclick="switchAdminTab('edit')">🖼️ Quản lý &amp; Xóa Đề</div>
+            <div class="admin-tab active" id="tab-btn-export" onclick="switchAdminTab('export')">📥 Lưu Vĩnh Viễn (File Web)</div>
+        </div>
+
+        <!-- Tab 1: Thêm Đề Mới -->
+        <div id="admin-tab-add" class="hidden">
+            <div class="admin-section-card" style="border-left: 5px solid var(--primary);">
+                <h3 class="admin-section-title" style="color: var(--primary);">Bước 1: Tên đề kiểm tra</h3>
+                <input type="text" id="new-test-name" class="select-box" style="padding: 12px; margin-bottom: 0;" placeholder="Nhập tên đề... (Ví dụ: KTTNKQ Lần 2)">
+            </div>
+
+            <div class="admin-section-card" style="border-left: 5px solid var(--warning);">
+                <h3 class="admin-section-title" style="color: var(--warning);">Bước 2: Nhập dữ liệu câu hỏi</h3>
+                
+                <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 15px;">
+                    <div class="file-upload-wrapper">
+                        <button class="btn btn-warning btn-sm">📄 Tải lên file (.json / .pdf / Ảnh)</button>
+                        <input type="file" id="file-upload" accept=".json,.txt,.pdf,.png,.jpg,.jpeg" multiple="" onchange="handleFileUpload(event)">
+                    </div>
+                    <button class="btn btn-outline btn-sm" onclick="showPdfHelper()">🛠️ Trợ lý xử lý thủ công</button>
+                </div>
+
+                <div id="pdf-helper-section" class="pdf-helper hidden">
+                    <h3 style="margin-top: 0; color: #c05621;">🤖 Trợ Lý Đọc Đề (PDF / Ảnh)</h3>
+                    <div id="helper-instruction" style="font-size: 0.95em; margin-bottom: 10px;"></div>
+                    
+                    <div id="helper-text-area">
+                        <textarea id="pdf-raw-text" class="admin-textarea" style="height: 120px;" placeholder="Dán nội dung đề đã copy vào đây... HOẶC bấm Ctrl+V để dán trực tiếp ảnh chụp màn hình!"></textarea>
+                    </div>
+                    
+                    <div id="helper-image-area" class="hidden text-center">
+                        <div id="image-preview-container" style="display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; margin-bottom: 10px;">
+                            <!-- Các ảnh dán/tải lên sẽ hiện ở đây -->
+                        </div>
+                        <button class="btn btn-outline btn-sm" onclick="clearPastedImages()" style="margin-bottom: 10px;">🗑️ Xóa các ảnh đã chọn/dán</button>
+                        <p style="color: var(--danger); font-weight: bold; font-size: 0.9em;">Hãy đính kèm (upload) CÁC BỨC ẢNH trên cùng với Lệnh bên dưới khi gửi cho AI nhé!</p>
+                    </div>
+
+                    <button class="btn btn-primary" style="width: 100%; margin-top: 10px;" onclick="copyPromptForAI()">📋 Copy Lệnh để gửi cho AI (Gemini / ChatGPT)</button>
+                    <p style="font-size: 0.9em; margin-top: 10px;"><em>Sau khi có mã JSON từ AI, thầy/cô dán vào ô bên dưới cùng và bấm Lưu Đề Mới.</em></p>
+                </div>
+
+                <label style="font-weight: bold; font-size: 0.9em;">Mã JSON của bộ đề (Dán kết quả từ AI vào đây):</label>
+                <textarea id="admin-json-input" class="admin-textarea" style="margin-top: 5px;" placeholder="Dán mảng các câu hỏi (JSON) vào đây..."></textarea>
+            </div>
+            
+            <button class="btn btn-success" style="width: 100%; padding: 18px; font-size: 1.2em;" onclick="saveNewTest()">💾 LƯU ĐỀ MỚI</button>
+            <p id="admin-msg-add" style="margin-top: 15px; font-weight: bold; text-align: center; color: var(--success);"></p>
+        </div>
+
+        <!-- Tab 2: Quản lý / Sửa / Xóa -->
+        <div id="admin-tab-edit" class="hidden">
+            <p style="color: #718096; margin-bottom: 10px;">Chọn đề (Bao gồm cả đề mặc định) để cập nhật hình ảnh, hoặc chọn đề tự tạo để Xóa.</p>
+            
+            <div style="display: flex; gap: 10px; margin-bottom: 20px;">
+                <select id="edit-test-selector" class="select-box" style="margin-bottom: 0; padding: 10px; flex: 1;" onchange="loadQuestionsForEditing()"><option value="">-- Chọn đề (Sửa ảnh / Xóa) --</option><option value="kien_giang_tuyen_tap">Đề năm học 2024-2025 [Mặc định]</option><option value="custom_test_1778836899598">Đề năm học 2023-2024</option></select>
+                <button id="btn-delete-test" class="btn btn-danger" onclick="confirmDeleteTest()">🗑️ Xóa Đề</button>
+            </div>
+
+            <div id="edit-questions-list"><div class="edit-question-card"><strong>Câu 1:</strong> <em>Cho hình trụ có bán kính đáy bằng R, chiều cao là h. Thể tích V của hình trụ đã ...</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-0" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 2:</strong> <em>Đồ thị của hàm số nào có dạng như hình vẽ?</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-1" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 3:</strong> <em>Trong các phương trình sau, phương trình nào là phương trình bậc hai ẩn x?</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-2" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 4:</strong> <em>Cho tam giác đều ABC nội tiếp trong đường tròn (O), M là điểm thuộc (O). Tính số...</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-3" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 5:</strong> <em>Xác định hệ số a, b, c của phương trình bậc hai $x^{2}-6x-2023=0$</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-4" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 6:</strong> <em>Giá trị của $\sqrt{2023}$ bằng</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-5" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 7:</strong> <em>Chu vi của đường tròn có bán kính R được tính theo công thức $C=2\pi R$. Áp dụng...</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-6" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 8:</strong> <em>Trong các hàm số sau, hàm số nào luôn đồng biến trên R?</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-7" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 9:</strong> <em>Hệ phương trình $\begin{cases}2x+y=1\\\\ 7x-y=26\end{cases}$ có nghiệm là</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-8" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 10:</strong> <em>Đường thẳng $y=3x-2$ song song với đường thẳng nào sau đây?</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-9" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 11:</strong> <em>Cho tam giác ABC vuông tại A, biết $AB=4$, $AC=6$, đường cao $AD=x$ (tham khảo h...</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-10" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 12:</strong> <em>Trong World Cup 2022 được tổ chức tại Qatar, quả bóng được sử dụng cho các trận ...</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-11" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 13:</strong> <em>Biết phương trình bậc hai $x^{2}-2023x+2024=0$ có hai nghiệm phân biệt $x_{1}, x...</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-12" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 14:</strong> <em>Giá trị của hàm số $y=4x^{2}$ tại $x=-1$ bằng</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-13" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div><div class="edit-question-card"><strong>Câu 15:</strong> <em>Điều kiện của x để biểu thức $\sqrt{x+3}$ có nghĩa là</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-14" value="" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div></div>
+
+            <button id="btn-save-edits" class="btn btn-success" style="width: 100%; margin-top: 10px;" onclick="saveImageEdits()">💾 Cập Nhật Hình Ảnh</button>
+            <p id="admin-msg-edit" style="margin-top: 15px; font-weight: bold; text-align: center; color: var(--success);">✅ Đã lưu toàn bộ hình ảnh thành công!</p>
+        </div>
+
+        <!-- Tab 3: Xuất File (Lưu vĩnh viễn) -->
+        <div id="admin-tab-export" class="">
+            <div class="admin-section-card" style="border-left: 5px solid var(--success);">
+                <h3 class="admin-section-title" style="color: var(--success);">Tải File Web (Cập nhật lên Vercel)</h3>
+                <p style="color: var(--text-main); margin-bottom: 15px;">Các đề do thầy/cô vừa tạo hiện tại chỉ được lưu ở <strong>bộ nhớ tạm của máy tính này</strong>. Học sinh vào Vercel sẽ không thấy đề mới.</p>
+                <p style="color: var(--text-main); margin-bottom: 20px;">Để đề thi tồn tại vĩnh viễn, hãy bấm nút dưới đây. Ứng dụng sẽ <strong>tự động nhúng tất cả đề mới vào mã nguồn</strong> và tải về máy một file Web mới nhất. Thầy/cô chỉ cần tải file này lên thay thế file cũ trên GitHub/Vercel là xong!</p>
+                <button class="btn btn-success" style="width: 100%; padding: 18px; font-size: 1.2em;" onclick="exportHTMLFile()">📥 TẢI XUỐNG BẢN CẬP NHẬT (HTML)</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    // MẬT KHẨU GIÁO VIÊN
+    const GIAO_VIEN_PASSWORD = "123456";
+
+    // --- DATABASE_MARKER_START ---
+    const defaultDatabase = {
+    "kien_giang_tuyen_tap": {
+        "title": "Đề năm học 2024-2025",
+        "isDefault": true,
+        "questions": [
+            {
+                "question": "Số nghiệm của phương trình $x^2 - x - 6 = 0$ là:",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "3"
+                    },
+                    {
+                        "value": "B",
+                        "text": "1"
+                    },
+                    {
+                        "value": "C",
+                        "text": "0"
+                    },
+                    {
+                        "value": "D",
+                        "text": "2"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Ta có $\\Delta = (-1)^2 - 4(1)(-6) = 25 > 0$. Phương trình bậc hai có $\\Delta > 0$ nên phương trình có 2 nghiệm phân biệt."
+            },
+            {
+                "question": "Đường thẳng $y = 2x + 1$ song song với đường thẳng nào sau đây?",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$y = -2x+1$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$y = -2x-1$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$y = -2x+3$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$y = 2x+3$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Hai đường thẳng $y = ax+b$ và $y = a'x+b'$ song song với nhau khi $a = a'$ và $b \\neq b'$. Ở đây $a=2, b=1$, nên đường thẳng song song là $y = 2x+3$ (vì có hệ số góc bằng 2 và tung độ gốc $3 \\neq 1$)."
+            },
+            {
+                "question": "Quan sát hình vẽ bên dưới, biết góc nội tiếp $\\widehat{PNQ} = 60^\\circ$. Số đo cung $PmQ$ bằng bao nhiêu?",
+                "hasImage": true,
+                "imgSrc": "https://i.postimg.cc/GhmJnz1m/cau3.jpg",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$30^\\circ$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$120^\\circ$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$60^\\circ$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$90^\\circ$"
+                    }
+                ],
+                "correctAnswer": "B",
+                "explanation": "Số đo của cung bị chắn bằng 2 lần số đo của góc nội tiếp chắn cung đó. Ta có số đo cung $PmQ = 2 \\cdot \\widehat{PNQ} = 2 \\cdot 60^\\circ = 120^\\circ$."
+            },
+            {
+                "question": "Cho hai đường tròn $(O; 2\\text{cm})$ và $(O'; 3\\text{cm})$ tiếp xúc trong với nhau. Độ dài đoạn nối tâm $OO'$ bằng:",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "3 cm"
+                    },
+                    {
+                        "value": "B",
+                        "text": "1 cm"
+                    },
+                    {
+                        "value": "C",
+                        "text": "2 cm"
+                    },
+                    {
+                        "value": "D",
+                        "text": "5 cm"
+                    }
+                ],
+                "correctAnswer": "B",
+                "explanation": "Hai đường tròn tiếp xúc trong với nhau thì khoảng cách giữa 2 tâm $d = |R - r|$. Ta có $OO' = |3 - 2| = 1$ (cm)."
+            },
+            {
+                "question": "Cho tam giác $ABC$ vuông tại $B$ (tham khảo hình vẽ). Chọn khẳng định đúng?",
+                "hasImage": true,
+                "imgSrc": "https://i.postimg.cc/0yqkJX2k/cau5.jpg",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$\\sin C = \\frac{AB}{BC}$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$\\sin C = \\frac{AB}{AC}$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$\\sin C = \\frac{BC}{AB}$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$\\sin C = \\frac{BC}{AC}$"
+                    }
+                ],
+                "correctAnswer": "B",
+                "explanation": "Tỉ số lượng giác Sin của một góc nhọn trong tam giác vuông bằng độ dài cạnh đối chia cho độ dài cạnh huyền. Đối với góc $C$, cạnh đối là $AB$, cạnh huyền là $AC$. Vậy $\\sin C = \\frac{AB}{AC}$."
+            },
+            {
+                "question": "Thể tích $V$ của hình trụ có bán kính đáy bằng $R$ và chiều cao $h$ được tính theo công thức nào?",
+                "hasImage": false,
+                "imgSrc": "https://i.postimg.cc/0yqkJX2k/cau5.jpg",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$V = \\frac{4}{3}\\pi R^3$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$V = \\pi R^2 h$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$V = \\frac{1}{3}\\pi R^2 h$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$V = 2\\pi R h$"
+                    }
+                ],
+                "correctAnswer": "B",
+                "explanation": "Theo lý thuyết hình học không gian, thể tích hình trụ bằng diện tích đáy nhân với chiều cao. Đáy là hình tròn có diện tích $S = \\pi R^2$. Vậy $V = \\pi R^2 h$."
+            },
+            {
+                "question": "Đồ thị của hàm số nào có dạng là một Parabol có bề lõm hướng lên trên và đi qua gốc tọa độ $O$ như hình vẽ?",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$y = 2x+1$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$y = 2$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$y = x$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$y = x^2$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Đồ thị là đường cong Parabol đi qua gốc tọa độ O nên hàm số có dạng $y = ax^2 (a \\neq 0)$. Vì bề lõm của Parabol hướng lên trên nên $a > 0$. Trong các phương án, chỉ có $y = x^2$ thỏa mãn."
+            },
+            {
+                "question": "Trong các phương trình sau, phương trình nào là phương trình bậc hai ẩn $x$?",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$2x - 3y = 0$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$2023 + 6x = 0$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$2x - 4 = 0$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$x^2 - 16x + 3 = 0$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Phương trình bậc hai ẩn $x$ có dạng tổng quát là $ax^2 + bx + c = 0$ (với $a \\neq 0$). Phương trình $x^2 - 16x + 3 = 0$ thỏa mãn định nghĩa này."
+            },
+            {
+                "question": "Xác định các hệ số $a, b, c$ của phương trình bậc hai $x^2 - 6x - 2023 = 0$.",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$a=1, b=6, c=2023$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$a=0, b=-6, c=-2023$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$a=1, b=-6, c=-2023$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$a=1, b=6, c=-2023$"
+                    }
+                ],
+                "correctAnswer": "C",
+                "explanation": "Dựa vào dạng chuẩn $ax^2 + bx + c = 0$, ta đồng nhất hệ số và thu được $a = 1$, $b = -6$, và $c = -2023$."
+            },
+            {
+                "question": "Điều kiện của $x$ để biểu thức $\\sqrt{x-2}$ có nghĩa là:",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$x \\le -2$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$x \\ge -2$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$x \\ge 2$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$x \\le 2$"
+                    }
+                ],
+                "correctAnswer": "C",
+                "explanation": "Căn bậc hai $\\sqrt{A}$ có nghĩa khi và chỉ khi $A \\ge 0$. Do đó, $x - 2 \\ge 0 \\Leftrightarrow x \\ge 2$."
+            },
+            {
+                "question": "Phương trình $x^2 - 4x + 3 = 0$ có các nghiệm là:",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$x_1 = -1$ và $x_2 = -3$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$x_1 = 1$ và $x_2 = -3$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$x_1 = 1$ và $x_2 = 3$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$x_1 = -1$ và $x_2 = 3$"
+                    }
+                ],
+                "correctAnswer": "C",
+                "explanation": "Ta thấy các hệ số của phương trình thỏa mãn $a + b + c = 1 + (-4) + 3 = 0$. Khi đó phương trình luôn có 2 nghiệm: $x_1 = 1$ và $x_2 = \\frac{c}{a} = 3$."
+            },
+            {
+                "question": "Cho hình nón có chiều cao $h = 3 \\text{ cm}$ và bán kính đáy $r = 2 \\text{ cm}$. Thể tích của hình nón đã cho bằng:",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$6\\pi \\text{ cm}^3$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$18\\pi \\text{ cm}^3$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$4\\pi \\text{ cm}^3$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$12\\pi \\text{ cm}^3$"
+                    }
+                ],
+                "correctAnswer": "C",
+                "explanation": "Thể tích hình nón được tính bằng công thức $V = \\frac{1}{3}\\pi r^2 h$. Thay số ta có: $V = \\frac{1}{3}\\pi \\cdot (2)^2 \\cdot 3 = 4\\pi \\text{ (cm}^3)$."
+            },
+            {
+                "question": "Cho mặt cầu có bán kính bằng $2 \\text{ dm}$. Diện tích mặt cầu đã cho bằng:",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$\\frac{16}{3}\\pi \\text{ dm}^2$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$\\frac{4\\pi}{3} \\text{ dm}^2$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$4\\pi \\text{ dm}^2$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$16\\pi \\text{ dm}^2$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Diện tích mặt cầu được tính bằng công thức $S = 4\\pi R^2$. Thay $R = 2$, ta có: $S = 4\\pi \\cdot 2^2 = 16\\pi \\text{ (dm}^2)$."
+            },
+            {
+                "question": "Biết phương trình bậc hai $x^2 - 2023x + 2024 = 0$ có hai nghiệm phân biệt $x_1, x_2$. Khi đó giá trị của tích $x_1 x_2$ bằng:",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "2024"
+                    },
+                    {
+                        "value": "B",
+                        "text": "-2023"
+                    },
+                    {
+                        "value": "C",
+                        "text": "-2024"
+                    },
+                    {
+                        "value": "D",
+                        "text": "2023"
+                    }
+                ],
+                "correctAnswer": "A",
+                "explanation": "Theo hệ thức Vi-ét đối với phương trình bậc hai $ax^2 + bx + c = 0$, tích hai nghiệm là $P = x_1 x_2 = \\frac{c}{a}$. Vậy $P = \\frac{2024}{1} = 2024$."
+            },
+            {
+                "question": "Cho hàm số $y = 3x^2$ có đồ thị parabol như hình bên dưới. Chọn khẳng định đúng?",
+                "hasImage": true,
+                "imgSrc": "https://i.postimg.cc/k5YD8Npy/cau15.jpg",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "Hàm số $y = 3x^2$ nghịch biến khi $x > 0$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "Hàm số $y = 3x^2$ nghịch biến khi $x < 3$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "Hàm số $y = 3x^2$ đồng biến khi $x > 0$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "Hàm số $y = 3x^2$ đồng biến khi $x \\in \\mathbb{R}$"
+                    }
+                ],
+                "correctAnswer": "C",
+                "explanation": "Hàm số $y = ax^2$ với $a = 3 > 0$ có tính chất: Đồng biến khi $x > 0$ (đồ thị đi lên bên phải trục tung) và nghịch biến khi $x < 0$ (đồ thị đi xuống bên trái trục tung). Vậy đáp án đúng là C."
+            }
+        ]
+    },
+    "custom_test_1778836899598": {
+        "title": "Đề năm học 2023-2024",
+        "questions": [
+            {
+                "question": "Câu 1: Cho hình trụ có bán kính đáy bằng R, chiều cao là h. Thể tích V của hình trụ đã cho được tính theo công thức",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$V=\\frac{4}{3}\\pi R^{3}$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$V=\\pi R^{2}h$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$V=2\\pi Rh$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$V=\\frac{1}{3}\\pi R^{2}h$"
+                    }
+                ],
+                "correctAnswer": "B",
+                "explanation": "Thể tích hình trụ có bán kính đáy R và chiều cao h được tính theo công thức $V=\\pi R^{2}h$."
+            },
+            {
+                "question": "Câu 2: Đồ thị của hàm số nào có dạng như hình vẽ?",
+                "hasImage": true,
+                "imgSrc": "https://i.postimg.cc/h43yMMvY/cau2.jpg",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$y=2x+1$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$y=2$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$y=x$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$y=x^{2}$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Đồ thị là một parabol đi qua gốc tọa độ O(0;0) và có bề lõm hướng lên trên, nên hàm số có dạng $y=ax^{2}$ với $a>0$. Trong các đáp án đã cho, chỉ có hàm số $y=x^{2}$ thỏa mãn."
+            },
+            {
+                "question": "Câu 3: Trong các phương trình sau, phương trình nào là phương trình bậc hai ẩn x?",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$2x-3y=0$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$2023+6x=0$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$2x-4=0$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$x^{2}-16x+3=0$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Phương trình bậc hai ẩn x có dạng $ax^{2}+bx+c=0$ (với $a \\neq 0$). Do đó, $x^{2}-16x+3=0$ là phương trình bậc hai ẩn x."
+            },
+            {
+                "question": "Câu 4: Cho tam giác đều ABC nội tiếp trong đường tròn (O), M là điểm thuộc (O). Tính số đo của góc AMB (tham khảo hình vẽ).",
+                "hasImage": true,
+                "imgSrc": "https://i.postimg.cc/BQLhzDPm/cau4.jpg",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$\\widehat{AMB}=30^{\\circ}$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$\\widehat{AMB}=45^{\\circ}$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$\\widehat{AMB}=75^{\\circ}$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$\\widehat{AMB}=60^{\\circ}$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Do tam giác ABC đều nên $\\widehat{ACB} = 60^{\\circ}$. Góc nội tiếp $\\widehat{AMB}$ và góc nội tiếp $\\widehat{ACB}$ cùng chắn cung AB nhỏ nên $\\widehat{AMB} = \\widehat{ACB} = 60^{\\circ}$."
+            },
+            {
+                "question": "Câu 5: Xác định hệ số a, b, c của phương trình bậc hai $x^{2}-6x-2023=0$",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$a=1, b=6, c=2023$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$a=0, b=-6, c=-2023$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$a=1, b=-6, c=-2023$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$a=1, b=6, c=-2023$"
+                    }
+                ],
+                "correctAnswer": "C",
+                "explanation": "Phương trình bậc hai $x^{2}-6x-2023=0$ có các hệ số là: $a=1, b=-6, c=-2023$."
+            },
+            {
+                "question": "Câu 6: Giá trị của $\\sqrt{2023}$ bằng",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$17\\sqrt{7}$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "17"
+                    },
+                    {
+                        "value": "C",
+                        "text": "44"
+                    },
+                    {
+                        "value": "D",
+                        "text": "45"
+                    }
+                ],
+                "correctAnswer": "A",
+                "explanation": "Ta phân tích: $2023 = 289 \\cdot 7 = 17^{2} \\cdot 7$. Do đó $\\sqrt{2023} = \\sqrt{17^{2} \\cdot 7} = 17\\sqrt{7}$."
+            },
+            {
+                "question": "Câu 7: Chu vi của đường tròn có bán kính R được tính theo công thức $C=2\\pi R$. Áp dụng tính chu vi của đường tròn (O) có bán kính $R=2m$.",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$2\\pi(m)$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "4(m)"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$4\\pi(m)$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "2(m)"
+                    }
+                ],
+                "correctAnswer": "C",
+                "explanation": "Thay $R=2$ m vào công thức $C=2\\pi R$, ta được: $C = 2\\pi \\cdot 2 = 4\\pi$ (m)."
+            },
+            {
+                "question": "Câu 8: Trong các hàm số sau, hàm số nào luôn đồng biến trên R?",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$y=-x+16$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$y=2023-6x$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$y=6x-2023$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$y=-16x+6$"
+                    }
+                ],
+                "correctAnswer": "C",
+                "explanation": "Hàm số bậc nhất $y=ax+b$ đồng biến trên $\\mathbb{R}$ khi và chỉ khi hệ số $a>0$. Trong các đáp án, hàm số $y=6x-2023$ có $a=6>0$ nên đồng biến trên $\\mathbb{R}$."
+            },
+            {
+                "question": "Câu 9: Hệ phương trình $\\begin{cases}2x+y=1\\\\\\\\ 7x-y=26\\end{cases}$ có nghiệm là",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$(x;y)=(5;-3)$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$(x;y)=(3;-5)$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$(x;y)=(-3;5)$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$(x;y)=(-5;3)$"
+                    }
+                ],
+                "correctAnswer": "B",
+                "explanation": "Cộng vế theo vế hai phương trình của hệ ta được: $(2x+7x) + (y-y) = 1+26 \\Leftrightarrow 9x = 27 \\Leftrightarrow x = 3$. Thay $x=3$ vào phương trình $2x+y=1$ ta có: $2(3)+y=1 \\Leftrightarrow y = -5$. Vậy nghiệm của hệ phương trình là $(3; -5)$."
+            },
+            {
+                "question": "Câu 10: Đường thẳng $y=3x-2$ song song với đường thẳng nào sau đây?",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$y=-\\frac{1}{3}x+7$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$y=-3x+2$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$y=2x-3$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$y=3x+15$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Hai đường thẳng song song khi có cùng hệ số góc và khác tung độ gốc ($a=a'$ và $b \\neq b'$). Đường thẳng $y=3x-2$ có hệ số góc $a=3$ và $b=-2$. Trong các đáp án, chỉ có đường thẳng $y=3x+15$ có $a'=3$ và $b'=15 \\neq -2$."
+            },
+            {
+                "question": "Câu 11: Cho tam giác ABC vuông tại A, biết $AB=4$, $AC=6$, đường cao $AD=x$ (tham khảo hình vẽ). Hãy chọn công thức đúng?",
+                "hasImage": true,
+                "imgSrc": "https://i.postimg.cc/yYgfG93v/cau11.jpg",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$\\frac{1}{x^{2}}=\\frac{1}{4^{2}}+\\frac{1}{6^{2}}$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$\\frac{1}{x^{2}}=\\frac{1}{4^{2}}-\\frac{1}{6^{2}}$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$x^{2}=4^{2}+6^{2}$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$x^{2}=6^{2}-4^{2}$"
+                    }
+                ],
+                "correctAnswer": "A",
+                "explanation": "Áp dụng hệ thức lượng trong tam giác vuông ABC có đường cao AD, ta có: $\\frac{1}{AD^{2}} = \\frac{1}{AB^{2}} + \\frac{1}{AC^{2}}$. Thay số ta được: $\\frac{1}{x^{2}} = \\frac{1}{4^{2}} + \\frac{1}{6^{2}}$."
+            },
+            {
+                "question": "Câu 12: Trong World Cup 2022 được tổ chức tại Qatar, quả bóng được sử dụng cho các trận đấu có dạng hình cầu và có đường kính bằng 22 cm. Tính diện tích bề mặt của quả bóng.",
+                "hasImage": true,
+                "imgSrc": "https://i.postimg.cc/9FRxkTwn/cau12.jpg",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$576\\pi(cm^{2})$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$121\\pi(cm^{2})$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$1936\\pi(cm^{2})$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$484\\pi(cm^{2})$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Bán kính của quả bóng hình cầu là $R = \\frac{22}{2} = 11$ (cm). Diện tích bề mặt của quả bóng là $S = 4\\pi R^{2} = 4\\pi \\cdot 11^{2} = 4\\pi \\cdot 121 = 484\\pi$ ($cm^{2}$)."
+            },
+            {
+                "question": "Câu 13: Biết phương trình bậc hai $x^{2}-2023x+2024=0$ có hai nghiệm phân biệt $x_{1}, x_{2}$. Khi đó giá trị của tích $x_{1}x_{2}$ bằng",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "2024"
+                    },
+                    {
+                        "value": "B",
+                        "text": "-2023"
+                    },
+                    {
+                        "value": "C",
+                        "text": "-2024"
+                    },
+                    {
+                        "value": "D",
+                        "text": "2023"
+                    }
+                ],
+                "correctAnswer": "A",
+                "explanation": "Theo hệ thức Vi-ét, tích hai nghiệm của phương trình bậc hai $ax^{2}+bx+c=0$ là $x_{1}x_{2} = \\frac{c}{a}$. Áp dụng vào phương trình đã cho ta có $x_{1}x_{2} = \\frac{2024}{1} = 2024$."
+            },
+            {
+                "question": "Câu 14: Giá trị của hàm số $y=4x^{2}$ tại $x=-1$ bằng",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "-1"
+                    },
+                    {
+                        "value": "B",
+                        "text": "4"
+                    },
+                    {
+                        "value": "C",
+                        "text": "-4"
+                    },
+                    {
+                        "value": "D",
+                        "text": "1"
+                    }
+                ],
+                "correctAnswer": "B",
+                "explanation": "Thay $x=-1$ vào hàm số, ta tính được $y = 4\\cdot (-1)^{2} = 4 \\cdot 1 = 4$."
+            },
+            {
+                "question": "Câu 15: Điều kiện của x để biểu thức $\\sqrt{x+3}$ có nghĩa là",
+                "hasImage": false,
+                "imgSrc": "",
+                "options": [
+                    {
+                        "value": "A",
+                        "text": "$x\\neq-3$"
+                    },
+                    {
+                        "value": "B",
+                        "text": "$x\\le-3$"
+                    },
+                    {
+                        "value": "C",
+                        "text": "$x>-3$"
+                    },
+                    {
+                        "value": "D",
+                        "text": "$x\\ge-3$"
+                    }
+                ],
+                "correctAnswer": "D",
+                "explanation": "Biểu thức chứa căn thức bậc hai $\\sqrt{A}$ có nghĩa khi $A \\ge 0$. Suy ra $x+3 \\ge 0 \\Leftrightarrow x \\ge -3$."
+            }
+        ],
+        "isDefault": false
+    }
+};
+    // --- DATABASE_MARKER_END ---
+
+    let appDatabase = {}; 
+    let currentQuizData = [];
+    let currentIndex = 0;
+    let score = 0;
+    let hasAnswered = false;
+    let editingTestId = null;
+
+    function initApp() {
+        appDatabase = JSON.parse(JSON.stringify(defaultDatabase)); 
+        const savedTests = localStorage.getItem('myMathTests_v2');
+        if (savedTests) {
+            try { Object.assign(appDatabase, JSON.parse(savedTests)); } 
+            catch (e) {}
+        }
+        updateDropdowns();
+        resetJsonTemplate();
+    }
+
+    function resetJsonTemplate() {
+        document.getElementById('admin-json-input').value = `[\n  {\n    "question": "Nội dung câu hỏi...",\n    "hasImage": false,\n    "imgSrc": "",\n    "options": [\n      {"value": "A", "text": "Đáp án A"}, \n      {"value": "B", "text": "Đáp án B"},\n      {"value": "C", "text": "Đáp án C"}, \n      {"value": "D", "text": "Đáp án D"}\n    ],\n    "correctAnswer": "A",\n    "explanation": "Hướng dẫn giải."\n  }\n]`;
+    }
+
+    function updateDropdowns() {
+        const selectBox = document.getElementById('test-selector');
+        const editBox = document.getElementById('edit-test-selector');
+        
+        // Lưu lại ID đang chọn nếu có
+        const currentSelectedTest = selectBox.value;
+        const currentEditTest = editBox.value;
+
+        selectBox.innerHTML = ''; 
+        editBox.innerHTML = '<option value="">-- Chọn đề (Sửa ảnh / Xóa) --</option>';
+
+        for (const [key, testObj] of Object.entries(appDatabase)) {
+            const option = document.createElement('option');
+            option.value = key; option.textContent = testObj.title;
+            selectBox.appendChild(option);
+
+            // Cho phép chọn cả đề mặc định để thêm ảnh
+            const optEdit = document.createElement('option');
+            optEdit.value = key; optEdit.textContent = testObj.title + (testObj.isDefault ? " [Mặc định]" : "");
+            editBox.appendChild(optEdit);
+        }
+
+        if (currentSelectedTest && appDatabase[currentSelectedTest]) selectBox.value = currentSelectedTest;
+        if (currentEditTest && appDatabase[currentEditTest]) editBox.value = currentEditTest;
+    }
+
+    function showScreen(screenId) {
+        ['start-screen', 'quiz-screen', 'results-screen', 'admin-screen'].forEach(id => {
+            document.getElementById(id).classList.add('hidden');
+        });
+        document.getElementById(screenId).classList.remove('hidden');
+    }
+
+    function hideModal(modalId) { document.getElementById(modalId).classList.add('hidden'); }
+
+    // XÁC THỰC MẬT KHẨU
+    function promptAdminPassword() {
+        document.getElementById('auth-modal').classList.remove('hidden');
+        document.getElementById('admin-password').value = '';
+        document.getElementById('auth-error').innerText = '';
+        setTimeout(() => document.getElementById('admin-password').focus(), 100);
+    }
+    function handlePasswordEnter(e) { if (e.key === 'Enter') checkPassword(); }
+    function checkPassword() {
+        const pwd = document.getElementById('admin-password').value;
+        if (pwd === GIAO_VIEN_PASSWORD) {
+            hideModal('auth-modal'); showScreen('admin-screen'); switchAdminTab('add');
+        } else {
+            document.getElementById('auth-error').innerText = "❌ Mật khẩu không chính xác!";
+        }
+    }
+
+    // CHẾ ĐỘ GIÁO VIÊN
+    function hideAdminScreen() { 
+        showScreen('start-screen'); 
+        document.getElementById('admin-msg-add').innerText = ''; 
+        document.getElementById('pdf-helper-section').classList.add('hidden');
+    }
+
+    let currentAiMode = 'text'; 
+    let pastedImages = [];
+
+    function switchAdminTab(tab) {
+        ['add', 'edit', 'export'].forEach(t => {
+            document.getElementById(`tab-btn-${t}`).classList.remove('active');
+            document.getElementById(`admin-tab-${t}`).classList.add('hidden');
+        });
+
+        document.getElementById(`tab-btn-${tab}`).classList.add('active');
+        document.getElementById(`admin-tab-${tab}`).classList.remove('hidden');
+    }
+
+    function showPdfHelper() {
+        currentAiMode = 'text';
+        document.getElementById('pdf-helper-section').classList.remove('hidden');
+        document.getElementById('helper-text-area').classList.remove('hidden');
+        document.getElementById('helper-image-area').classList.add('hidden');
+        document.getElementById('helper-instruction').innerHTML = `Nếu trình duyệt không cho tải file, thầy cô làm như sau:<br>
+            <ol style="font-size: 0.95em; padding-left: 20px;">
+                <li>Mở file PDF/Word, <strong>bôi đen toàn bộ đề (Ctrl+A), Copy (Ctrl+C)</strong> rồi dán vào ô bên dưới.</li>
+                <li><strong>HOẶC:</strong> Bấm <strong>Ctrl + V</strong> bất cứ lúc nào để dán trực tiếp nhiều ảnh chụp màn hình vào đây!</li>
+            </ol>`;
+        document.getElementById('pdf-raw-text').value = '';
+        clearPastedImagesBase();
+    }
+
+    function clearPastedImagesBase() {
+        pastedImages = [];
+        document.getElementById('image-preview-container').innerHTML = '';
+    }
+
+    function clearPastedImages() {
+        clearPastedImagesBase();
+        currentAiMode = 'text';
+        document.getElementById('helper-image-area').classList.add('hidden');
+        document.getElementById('helper-text-area').classList.remove('hidden');
+        document.getElementById('file-upload').value = '';
+    }
+
+    // Sự kiện lắng nghe Ctrl+V (Paste) để bắt ảnh chụp màn hình
+    document.addEventListener('paste', function(e) {
+        if (document.getElementById('admin-screen').classList.contains('hidden')) return;
+        
+        const items = (e.clipboardData || e.originalEvent.clipboardData).items;
+        let hasImage = false;
+
+        for (let index in items) {
+            const item = items[index];
+            if (item.kind === 'file' && item.type.startsWith('image/')) {
+                const blob = item.getAsFile();
+                const reader = new FileReader();
+                reader.onload = function(event) { addImageToPreview(event.target.result); };
+                reader.readAsDataURL(blob);
+                hasImage = true;
+            }
+        }
+
+        if (hasImage) {
+            e.preventDefault(); 
+            currentAiMode = 'image';
+            document.getElementById('helper-text-area').classList.add('hidden');
+            document.getElementById('helper-image-area').classList.remove('hidden');
+            document.getElementById('pdf-helper-section').classList.remove('hidden');
+            document.getElementById('helper-instruction').innerHTML = "📸 Trợ lý đã nhận ảnh từ Clipboard! Thầy/cô có thể <strong>tiếp tục ấn Ctrl+V</strong> để dán dồn thêm nhiều ảnh.<br>Sau đó copy Lệnh bên dưới gửi cho AI nhé.";
+        }
+    });
+
+    function addImageToPreview(src) {
+        pastedImages.push(src);
+        const container = document.getElementById('image-preview-container');
+        const img = document.createElement('img');
+        img.src = src;
+        img.style.maxHeight = '150px';
+        img.style.maxWidth = '100%';
+        img.style.border = '1px solid #cbd5e0';
+        img.style.borderRadius = '6px';
+        container.appendChild(img);
+    }
+
+    function handleFileUpload(event) {
+        const files = event.target.files;
+        if (!files || files.length === 0) return;
+        
+        const ext = files[0].name.split('.').pop().toLowerCase();
+        const nameInput = document.getElementById('new-test-name');
+        if (nameInput.value.trim() === '') {
+            nameInput.value = files[0].name.replace(/\.[^/.]+$/, "");
+        }
+        
+        document.getElementById('pdf-helper-section').classList.add('hidden');
+        document.getElementById('admin-msg-add').innerText = '';
+
+        if (ext === 'json' || ext === 'txt') {
+            const reader = new FileReader();
+            reader.onload = function(e) { document.getElementById('admin-json-input').value = e.target.result; };
+            reader.readAsText(files[0]);
+        } 
+        else if (ext === 'pdf') {
+            extractTextFromPDF(files[0]);
+        }
+        else if (['png', 'jpg', 'jpeg'].includes(ext)) {
+            clearPastedImagesBase();
+            currentAiMode = 'image';
+            document.getElementById('helper-text-area').classList.add('hidden');
+            document.getElementById('helper-image-area').classList.remove('hidden');
+            document.getElementById('pdf-helper-section').classList.remove('hidden');
+            document.getElementById('helper-instruction').innerHTML = "📸 Trợ lý đã nhận ảnh! Thầy/cô vui lòng bấm nút Copy Lệnh bên dưới, sau đó <strong>tải các ảnh này lên Gemini/ChatGPT</strong> kèm theo Lệnh để AI đọc đề giúp nhé.";
+            
+            Array.from(files).forEach(file => {
+                if (['png', 'jpg', 'jpeg'].includes(file.name.split('.').pop().toLowerCase())) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) { addImageToPreview(e.target.result); };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+    }
+
+    function extractTextFromPDF(file) {
+        document.getElementById('loading-overlay').classList.remove('hidden');
+        const reader = new FileReader();
+        
+        reader.onload = async function(e) {
+            const typedarray = new Uint8Array(e.target.result);
+            try {
+                pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+                
+                const loadingTask = pdfjsLib.getDocument({
+                    data: typedarray,
+                    cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/cmaps/',
+                    cMapPacked: true
+                });
+                
+                const pdf = await loadingTask.promise;
+                let fullText = "";
+                for (let i = 1; i <= pdf.numPages; i++) {
+                    const page = await pdf.getPage(i);
+                    const textContent = await page.getTextContent();
+                    const pageText = textContent.items.map(item => item.str).join(" ");
+                    fullText += pageText + "\n";
+                }
+                currentAiMode = 'text';
+                document.getElementById('pdf-raw-text').value = fullText;
+                document.getElementById('helper-text-area').classList.remove('hidden');
+                document.getElementById('helper-image-area').classList.add('hidden');
+                document.getElementById('helper-instruction').innerHTML = "Trợ lý đã bóc tách chữ từ PDF thành công. Thầy/cô vui lòng kiểm tra nội dung và bấm nút Copy Lệnh để gửi cho AI.";
+                document.getElementById('pdf-helper-section').classList.remove('hidden');
+                document.getElementById('admin-json-input').value = ""; 
+                document.getElementById('loading-overlay').classList.add('hidden');
+            } catch (error) {
+                console.error("PDF Read Error:", error);
+                document.getElementById('loading-overlay').classList.add('hidden');
+                alert("⚠️ Trình duyệt bảo mật quá cao nên chặn đọc file PDF tự động.\n\nGIẢI PHÁP 100% THÀNH CÔNG:\nThầy/cô hãy mở file PDF trên máy tính, nhấn Ctrl+A (chọn tất cả), Ctrl+C (copy) rồi dán thẳng vào ô 'Trợ lý đọc file PDF' nhé!");
+                showPdfHelper();
+            }
+        };
+        
+        reader.onerror = function() {
+            document.getElementById('loading-overlay').classList.add('hidden');
+            alert("⚠️ Trình duyệt chặn không cho tải file nội bộ.\n\nVui lòng dùng tính năng 'Trợ lý xử lý PDF thủ công' (Copy/Paste) để thay thế.");
+            showPdfHelper();
+        };
+        
+        reader.readAsArrayBuffer(file);
+    }
+
+    function copyPromptForAI() {
+        let prompt = "";
+        const baseRules = `Đóng vai là một giáo viên Toán, hãy chuyển đổi TOÀN BỘ nội dung đề kiểm tra sang định dạng mảng JSON. 
+Quy tắc CỰC KỲ QUAN TRỌNG:
+1. Phải trích xuất và giải ĐẦY ĐỦ TẤT CẢ các câu hỏi có trong đề (Ví dụ đề có 15 câu thì mã JSON phải có đủ 15 object). Tuyệt đối KHÔNG bỏ sót câu nào, KHÔNG được làm tắt hay chỉ làm ví dụ 1 câu.
+2. Chỉ trả về duy nhất mảng JSON (bắt đầu bằng [ và kết thúc bằng ]). Không giải thích gì thêm.
+3. Cấu trúc mỗi object: 
+{"question": "Nội dung câu hỏi", "hasImage": false, "imgSrc": "", "options": [{"value": "A", "text": "Đáp án A"}, {"value": "B", "text": "Đáp án B"}, {"value": "C", "text": "Đáp án C"}, {"value": "D", "text": "Đáp án D"}], "correctAnswer": "A", "explanation": "Lời giải chi tiết."}
+4. Bọc công thức bằng kí hiệu đô-la ($...$). Để trích xuất dấu gạch chéo ngược (\\), phải nhân đôi thành (\\\\).`;
+
+        if (currentAiMode === 'image') {
+            prompt = `${baseRules}\n\nNhiệm vụ: Hãy đọc đề Toán trong TẤT CẢ CÁC BỨC ẢNH ĐÍNH KÈM và trả về mã JSON chuẩn xác. Đảm bảo đọc hết từ trên xuống dưới, không bỏ sót bất kỳ câu nào.`;
+        } else {
+            const rawText = document.getElementById('pdf-raw-text').value.trim();
+            if(!rawText) { alert("Vui lòng dán nội dung đề vào ô trống trước!"); return; }
+            prompt = `${baseRules}\n\nNội dung đề:\n----------------\n${rawText}`;
+        }
+        
+        const textArea = document.createElement("textarea");
+        textArea.value = prompt;
+        textArea.style.top = "0";
+        textArea.style.left = "0";
+        textArea.style.position = "fixed";
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+            document.execCommand('copy');
+            if (currentAiMode === 'image') {
+                alert("✅ Đã copy lệnh thành công!\n\nLƯU Ý: Thầy/cô hãy copy/tải CÁC BỨC ẢNH ĐÓ LÊN Gemini/ChatGPT, dán kèm lệnh này vào khung chat và gửi đi nhé.");
+            } else {
+                alert("✅ Đã copy lệnh thành công!\n\nDán lệnh này vào Gemini hoặc ChatGPT để lấy mã JSON nhé.");
+            }
+        } catch (err) {
+            alert("❌ Lỗi: Không thể copy tự động do bảo mật của trình duyệt. Thầy/cô vui lòng bôi đen nội dung và copy thủ công nhé.");
+        }
+        
+        document.body.removeChild(textArea);
+    }
+
+    function saveNewTest() {
+        const nameInput = document.getElementById('new-test-name').value.trim();
+        const jsonInput = document.getElementById('admin-json-input').value.trim();
+        const msgEl = document.getElementById('admin-msg-add');
+
+        if (!nameInput) { msgEl.innerText = "❌ Vui lòng nhập tên đề!"; msgEl.style.color = "var(--danger)"; return; }
+        if (!jsonInput) { msgEl.innerText = "❌ Vui lòng dán dữ liệu JSON!"; msgEl.style.color = "var(--danger)"; return; }
+
+        try {
+            // Tự động tìm mảng JSON trong trường hợp AI trả về text thừa ở trên/dưới
+            let startIndex = jsonInput.indexOf('[');
+            let endIndex = jsonInput.lastIndexOf(']');
+            if (startIndex === -1 || endIndex === -1) {
+                throw new Error("Không tìm thấy mảng JSON (thiếu dấu [ hoặc ]).");
+            }
+            
+            let cleanJson = jsonInput.substring(startIndex, endIndex + 1);
+            const parsedQuestions = JSON.parse(cleanJson);
+            
+            if (!Array.isArray(parsedQuestions)) throw new Error("Dữ liệu phải là một mảng []");
+            if (parsedQuestions.length === 0) throw new Error("Mảng JSON rỗng, không có câu hỏi nào.");
+            
+            const newId = "custom_test_" + Date.now();
+            let savedStorage = localStorage.getItem('myMathTests_v2');
+            let customTests = savedStorage ? JSON.parse(savedStorage) : {};
+            
+            customTests[newId] = { title: nameInput, questions: parsedQuestions, isDefault: false };
+            localStorage.setItem('myMathTests_v2', JSON.stringify(customTests));
+            
+            appDatabase[newId] = customTests[newId];
+            updateDropdowns(); // Cập nhật danh sách
+
+            msgEl.innerText = `✅ Lưu thành công ${parsedQuestions.length} câu hỏi! Đang tự động mở đề...`;
+            msgEl.style.color = "var(--success)";
+            
+            setTimeout(() => { 
+                document.getElementById('new-test-name').value = ''; 
+                resetJsonTemplate();
+                document.getElementById('pdf-helper-section').classList.add('hidden');
+                document.getElementById('file-upload').value = ""; 
+                msgEl.innerText=''; 
+                
+                // Tự động chuyển qua tab Sửa Ảnh và mở luôn Đề vừa mới tạo
+                switchAdminTab('edit'); 
+                document.getElementById('edit-test-selector').value = newId;
+                loadQuestionsForEditing();
+            }, 1500);
+
+        } catch (e) {
+            msgEl.innerText = "❌ Lỗi: " + e.message;
+            msgEl.style.color = "var(--danger)";
+        }
+    }
+
+    // QUẢN LÝ / XÓA ĐỀ
+    function loadQuestionsForEditing() {
+        editingTestId = document.getElementById('edit-test-selector').value;
+        const listContainer = document.getElementById('edit-questions-list');
+        const btnSave = document.getElementById('btn-save-edits');
+        const btnDelete = document.getElementById('btn-delete-test');
+        const msgEl = document.getElementById('admin-msg-edit');
+        msgEl.innerText = "";
+
+        if (!editingTestId) { 
+            listContainer.innerHTML = ""; btnSave.classList.add('hidden'); btnDelete.classList.add('hidden'); return; 
+        }
+
+        if (!appDatabase[editingTestId].isDefault) {
+            btnDelete.classList.remove('hidden');
+        } else {
+            btnDelete.classList.add('hidden');
+        }
+
+        const questions = appDatabase[editingTestId].questions;
+        let html = '';
+        questions.forEach((q, idx) => {
+            // An toàn: Đảm bảo có nội dung câu hỏi tránh lỗi undefined
+            let questionText = q.question || "Không có nội dung câu hỏi";
+            // Xóa chữ "Câu X:" bị lặp ở đầu
+            questionText = questionText.replace(/^(Câu\s*\d+\s*[:\.-]?\s*|\d+\s*[:\.-]\s*)/i, '');
+            const shortQ = questionText.length > 80 ? questionText.substring(0, 80) + "..." : questionText;
+            html += `<div class="edit-question-card"><strong>Câu ${idx + 1}:</strong> <em>${shortQ}</em>
+                    <input type="text" class="edit-img-input" id="edit-img-url-${idx}" value="${q.imgSrc || ''}" placeholder="Nhập link ảnh (ví dụ: https://i.postimg.cc/...)"></div>`;
+        });
+        listContainer.innerHTML = html;
+        btnSave.classList.remove('hidden');
+    }
+
+    function saveImageEdits() {
+        if (!editingTestId) return;
+        const questions = appDatabase[editingTestId].questions;
+        questions.forEach((q, idx) => {
+            const inputVal = document.getElementById(`edit-img-url-${idx}`).value.trim();
+            q.imgSrc = inputVal; q.hasImage = (inputVal.length > 0); 
+        });
+
+        let savedStorage = localStorage.getItem('myMathTests_v2');
+        let customTests = savedStorage ? JSON.parse(savedStorage) : {};
+        
+        if (appDatabase[editingTestId].isDefault) {
+            customTests[editingTestId] = appDatabase[editingTestId];
+        }
+        
+        customTests[editingTestId].questions = questions;
+        localStorage.setItem('myMathTests_v2', JSON.stringify(customTests));
+
+        const msgEl = document.getElementById('admin-msg-edit');
+        msgEl.innerText = "✅ Đã lưu toàn bộ hình ảnh thành công!";
+        msgEl.style.color = "var(--success)";
+    }
+
+    function confirmDeleteTest() { if (editingTestId) document.getElementById('delete-modal').classList.remove('hidden'); }
+
+    function executeDeleteTest() {
+        if (!editingTestId) return;
+        delete appDatabase[editingTestId];
+        let savedStorage = localStorage.getItem('myMathTests_v2');
+        if(savedStorage) {
+            let customTests = JSON.parse(savedStorage);
+            delete customTests[editingTestId];
+            localStorage.setItem('myMathTests_v2', JSON.stringify(customTests));
+        }
+        hideModal('delete-modal'); updateDropdowns();
+        document.getElementById('edit-test-selector').value = ''; loadQuestionsForEditing();
+    }
+
+    // TẢI FILE WEB MỚI (LƯU VĨNH VIỄN)
+    function exportHTMLFile() {
+        let dbString = JSON.stringify(appDatabase, null, 4);
+        const regex = /\/\/ --- DATABASE_MARKER_START ---[\s\S]*?\/\/ --- DATABASE_MARKER_END ---/;
+        const replacement = `// --- DATABASE_MARKER_START ---\n    const defaultDatabase = ${dbString};\n    // --- DATABASE_MARKER_END ---`;
+
+        fetch(window.location.href)
+            .then(res => {
+                if(!res.ok) throw new Error("Fetch failed");
+                return res.text();
+            })
+            .then(html => {
+                downloadHtml(html.replace(regex, replacement));
+            })
+            .catch(err => {
+                // Khôi phục UI về trạng thái mặc định trước khi trích xuất HTML
+                hideAdminScreen(); 
+                
+                let currentHTML = "<!DOCTYPE html>\n<html lang=\"vi\">\n" + document.documentElement.innerHTML + "\n</html>";
+                downloadHtml(currentHTML.replace(regex, replacement));
+            });
+    }
+
+    function downloadHtml(newHtml) {
+        const blob = new Blob([newHtml], { type: 'text/html;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = "Toan9_BanCapNhat.html";
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        alert("✅ Đã tải file Web mới về máy tính!\n\nThầy/cô hãy lấy file 'Toan9_BanCapNhat.html' này tải lên GitHub để cập nhật trang Vercel nhé.");
+    }
+
+    // LÀM BÀI TRẮC NGHIỆM
+    function startQuiz() {
+        const selectedKey = document.getElementById('test-selector').value;
+        const testObj = appDatabase[selectedKey];
+        currentQuizData = testObj.questions;
+        document.getElementById('quiz-title-display').innerText = testObj.title;
+        currentIndex = 0; score = 0;
+        showScreen('quiz-screen'); renderQuestion();
+    }
+
+    function selectOption(liElement, inputElement) {
+        if (hasAnswered) return; 
+        document.querySelectorAll('.option-item').forEach(item => item.classList.remove('selected'));
+        liElement.classList.add('selected'); inputElement.checked = true;
+        document.getElementById('btn-submit').disabled = false;
+    }
+
+    function renderQuestion() {
+        const q = currentQuizData[currentIndex]; hasAnswered = false;
+        document.getElementById('q-current').innerText = `Câu ${currentIndex + 1}`;
+        document.getElementById('q-total').innerText = `/ ${currentQuizData.length}`;
+        document.getElementById('progress-fill').style.width = `${((currentIndex) / currentQuizData.length) * 100}%`;
+
+        let questionText = q.question || "Nội dung câu hỏi bị thiếu";
+        // Tự động xóa chữ "Câu 1:", "Câu 1.", "1." bị thừa từ AI
+        questionText = questionText.replace(/^(Câu\s*\d+\s*[:\.-]?\s*|\d+\s*[:\.-]\s*)/i, '');
+
+        let html = `<div class="question-box">Câu ${currentIndex + 1}: ${questionText}</div>`;
+        if (q.hasImage) {
+            if(q.imgSrc) {
+                html += `<div class="image-placeholder has-image"><img src="${q.imgSrc}"></div>`;
+            } else {
+                html += `<div class="image-placeholder"><span style="color:#e53e3e">⚠️ Giáo viên chưa cập nhật ảnh minh họa cho câu này.</span></div>`;
+            }
+        }
+
+        html += `<ul class="options-list">`;
+        if(q.options && Array.isArray(q.options)) {
+            q.options.forEach((opt, idx) => {
+                html += `<li class="option-item" onclick="selectOption(this, document.getElementById('opt-${idx}'))" id="li-opt-${opt.value}">
+                        <span class="opt-label">${opt.value}</span> <span class="math-content">${opt.text}</span>
+                        <input type="radio" name="answer" id="opt-${idx}" value="${opt.value}"></li>`;
+            });
+        }
+        html += `</ul>`;
+
+        document.getElementById('question-area').innerHTML = html;
+        document.getElementById('feedback-area').className = 'feedback-box';
+        document.getElementById('btn-submit').classList.remove('hidden'); document.getElementById('btn-submit').disabled = true;
+        document.getElementById('btn-next').classList.add('hidden'); document.getElementById('btn-finish').classList.add('hidden');
+
+        if (window.MathJax && window.MathJax.typesetPromise) MathJax.typesetPromise();
+    }
+
+    function checkAnswer() {
+        if (hasAnswered) return;
+        const selectedInput = document.querySelector('input[name="answer"]:checked');
+        if (!selectedInput) return;
+
+        const q = currentQuizData[currentIndex];
+        const userValue = selectedInput.value;
+        const isCorrect = (userValue === q.correctAnswer);
+        hasAnswered = true;
+
+        document.querySelectorAll('.option-item').forEach(item => item.classList.add('disabled'));
+        const selectedLi = document.getElementById(`li-opt-${userValue}`);
+        const correctLi = document.getElementById(`li-opt-${q.correctAnswer}`);
+
+        if (isCorrect) { score++; selectedLi.classList.add('correct'); } 
+        else { selectedLi.classList.add('wrong'); if(correctLi) correctLi.classList.add('correct'); }
+
+        const feedbackArea = document.getElementById('feedback-area');
+        feedbackArea.className = `feedback-box show ${isCorrect ? 'is-correct' : 'is-wrong'}`;
+        document.getElementById('feedback-title').innerHTML = isCorrect ? "✅ Chính xác! Giỏi quá." : "❌ Sai rồi!";
+        document.getElementById('correct-answer-display').innerHTML = isCorrect ? "" : `👉 Đáp án đúng là: <span style="color:var(--danger)">${q.correctAnswer}</span>`;
+        document.getElementById('explanation-text').innerHTML = q.explanation || "";
+
+        document.getElementById('btn-submit').classList.add('hidden');
+        if (currentIndex < currentQuizData.length - 1) document.getElementById('btn-next').classList.remove('hidden');
+        else document.getElementById('btn-finish').classList.remove('hidden');
+
+        if (window.MathJax && window.MathJax.typesetPromise) MathJax.typesetPromise().then(() => feedbackArea.scrollIntoView({ behavior: 'smooth', block: 'nearest' }));
+    }
+
+    function nextQuestion() { currentIndex++; renderQuestion(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+
+    function showResults() {
+        showScreen('results-screen');
+        const total = currentQuizData.length;
+        document.getElementById('final-score-text').innerText = `${score}/${total}`;
+        let msg = ""; const percent = score/total;
+        if(percent >= 0.8) msg = "Quá xuất sắc! Bạn đã nắm chắc kiến thức.";
+        else if (percent >= 0.5) msg = "Khá tốt! Bạn cố gắng ôn tập thêm một chút nhé.";
+        else msg = "Đừng nản chí! Hãy xem lại các bài giải chi tiết để tiến bộ hơn.";
+        document.getElementById('feedback-msg').innerText = msg;
+    }
+
+    document.addEventListener("DOMContentLoaded", initApp);
+</script>
+
+
+</body>
+</html>
