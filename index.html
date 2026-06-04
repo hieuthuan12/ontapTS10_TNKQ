@@ -4643,40 +4643,35 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         setTimeout(() => document.getElementById('admin-password').focus(), 100);
     }
     function handlePasswordEnter(e) { if (e.key === 'Enter') checkPassword(); }
-   function checkPassword() {
+function checkPassword() {
     var input = document.getElementById('admin-password').value;
     var errorEl = document.getElementById('auth-error');
-    
-    if (errorEl) errorEl.innerText = ""; 
+    if (errorEl) errorEl.innerText = "";
 
    
-    fetch('/api/check-password', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ password: input })
-    })
-    .then(response => {
-        if (response.ok) {
-            return response.json();
-        }
-        throw new Error('Mật khẩu không chính xác hoặc lỗi hệ thống');
-    })
+    fetch('/password.json')
+    .then(response => response.json())
     .then(data => {
-        if (data.success) {
+        if (input === data.key) {
             alert("Xác thực thành công!");
-            hideModal('auth-modal'); 
+            hideModal('auth-modal'); // Ẩn bảng xác thực màu xám
             
             
-            document.getElementById('adminPanel').style.display = 'block';
+            if(document.getElementById('teacherMode')) {
+                document.getElementById('teacherMode').style.display = 'block';
+            } else if(document.getElementById('teacher-dashboard')) {
+                document.getElementById('teacher-dashboard').style.display = 'block';
+            } else if(document.getElementById('adminPanel')) {
+                document.getElementById('adminPanel').style.display = 'block';
+            }
+        } else {
+            if (errorEl) errorEl.innerText = "Mật khẩu giáo viên không chính xác!";
         }
     })
     .catch(error => {
-        if (errorEl) errorEl.innerText = "Mật khẩu giáo viên không chính xác hoặc Lỗi kết nối!";
+        if (errorEl) errorEl.innerText = "Lỗi tải hệ thống mật khẩu!";
     });
 }
-
  
     function hideAdminScreen() { 
         showScreen('start-screen'); 
