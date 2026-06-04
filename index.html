@@ -4644,38 +4644,51 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
     }
     function handlePasswordEnter(e) { if (e.key === 'Enter') checkPassword(); }
 function checkPassword() {
-    // 1. Lấy mật khẩu thầy nhập vào ô
     var input = document.getElementById('admin-password').value;
     var errorEl = document.getElementById('auth-error');
     if (errorEl) errorEl.innerText = "";
 
-    // 2. MẬT KHẨU BẢO MẬT: Thầy muốn đặt mật khẩu là gì thì hãy viết NGƯỢC LẠI từ phải sang trái vào đây nhé.
-    // Ví dụ: Mật khẩu thật là "thaythuan" -> Viết ngược là "nauhtyhth"
-    // Ở dưới em đang để ví dụ chuỗi viết ngược của mật khẩu "123456" vẫn là "654321"
-    var reverseSecret = "654321"; 
-    
-    // Hàm tự động đảo chữ để kiểm tra ngầm
-    var decodedSecret = reverseSecret.split("").reverse().join("");
-
-    // 3. Kiểm tra khớp mật khẩu
-    if (input === decodedSecret) {
-        alert("Xác thực thành công!");
-        hideModal('auth-modal'); // Ẩn bảng xác thực màu xám
-        
-        
-        var possibleIds = ['teacherMode', 'teacher-dashboard', 'adminPanel', 'quanly', 'vungGiaoVien'];
-        possibleIds.forEach(function(id) {
-            var el = document.getElementById(id);
-            if (el) {
-                el.style.display = 'block';
-                el.style.setProperty('display', 'block', 'important'); 
+    fetch('/api/check-password', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ password: input })
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Sai mật khẩu');
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            alert("Xác thực thành công!");
+            
+            // 1. ÉP ĐÓNG BẢNG MẬT KHẨU (Bỏ qua lỗi nếu sai tên)
+            try { document.getElementById('auth-modal').style.display = 'none'; } catch(e) {}
+            try { hideModal('auth-modal'); } catch(e) {}
+            try { document.getElementById('admin-password').closest('.modal').style.display = 'none'; } catch(e) {}
+            
+            // 2. QUÉT TỰ ĐỘNG CÁC VÙNG QUẢN LÝ ĐỂ MỞ RA
+            var possibleIds = ['teacherMode', 'adminPanel', 'teacher-dashboard', 'quanly', 'admin-dashboard'];
+            var moThanhCong = false;
+            
+            possibleIds.forEach(function(id) {
+                var el = document.getElementById(id);
+                if (el) {
+                    el.style.display = 'block';
+                    moThanhCong = true;
+                }
+            });
+            
+            if (!moThanhCong) {
+                alert("Đã mở khóa Server! Nhưng code không tìm thấy tên ID của vùng Quản lý đề trong HTML.");
             }
-        });
-    } else {
+        }
+    })
+    .catch(error => {
         if (errorEl) errorEl.innerText = "Mật khẩu giáo viên không chính xác!";
-    }
-}
- 
+    });
+} 
     function hideAdminScreen() { 
         showScreen('start-screen'); 
         document.getElementById('admin-msg-add').innerText = ''; 
