@@ -4643,41 +4643,41 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         setTimeout(() => document.getElementById('admin-password').focus(), 100);
     }
     function handlePasswordEnter(e) { if (e.key === 'Enter') checkPassword(); }
-    function checkPassword() {
-    // 1. Lấy mật khẩu do thầy/cô gõ vào ô nhập
+   function checkPassword() {
     var input = document.getElementById('admin-password').value;
+    var errorEl = document.getElementById('auth-error');
     
-    // 2. Gửi mật khẩu này lên Server Vercel nhờ kiểm tra hộ
+    if (errorEl) errorEl.innerText = ""; 
+
+   
     fetch('/api/check-password', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/json'
         },
         body: JSON.stringify({ password: input })
     })
-    .then(response => response.json())
+    .then(response => {
+        if (response.ok) {
+            return response.json();
+        }
+        throw new Error('Mật khẩu không chính xác hoặc lỗi hệ thống');
+    })
     .then(data => {
         if (data.success) {
-            // Nếu Đúng mật khẩu -> Cho phép vào phần Quản lý đề
             alert("Xác thực thành công!");
-            showModal('auth-modal'); // Đóng bảng nhập mật khẩu
+            hideModal('auth-modal'); 
             
-            // --- THẦY CHÚ Ý Chỗ này ---
-            // Thầy hãy copy các dòng lệnh chuyển trang hoặc mở chức năng của GV 
-            // ở hàm checkPassword cũ của thầy dán vào đây nhé.
             
-        } else {
-            // Nếu Sai mật khẩu -> Báo lỗi lên màn hình
-            document.getElementById('auth-error').innerText = data.message;
+            document.getElementById('teacher-dashboard').style.display = 'block';
         }
     })
     .catch(error => {
-        console.error('Lỗi kết nối:', error);
-        document.getElementById('auth-error').innerText = "Lỗi kết nối hệ thống bảo mật!";
+        if (errorEl) errorEl.innerText = "Mật khẩu giáo viên không chính xác hoặc Lỗi kết nối!";
     });
 }
 
-    // CHẾ ĐỘ GIÁO VIÊN
+ 
     function hideAdminScreen() { 
         showScreen('start-screen'); 
         document.getElementById('admin-msg-add').innerText = ''; 
@@ -4724,7 +4724,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         document.getElementById('file-upload').value = '';
     }
 
-    // Sự kiện lắng nghe Ctrl+V (Paste) để bắt ảnh chụp màn hình
+   
     document.addEventListener('paste', function(e) {
         if (document.getElementById('admin-screen').classList.contains('hidden')) return;
         
