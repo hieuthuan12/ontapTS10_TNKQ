@@ -4643,7 +4643,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
         setTimeout(() => document.getElementById('admin-password').focus(), 100);
     }
     function handlePasswordEnter(e) { if (e.key === 'Enter') checkPassword(); }
-function checkPassword() {
+    function checkPassword() {
     var input = document.getElementById('admin-password').value;
     var errorEl = document.getElementById('auth-error');
     if (errorEl) errorEl.innerText = "";
@@ -4661,34 +4661,29 @@ function checkPassword() {
     })
     .then(data => {
         if (data.success) {
-            alert("Xác thực thành công!");
-            
-            
-            try { document.getElementById('auth-modal').style.display = 'none'; } catch(e) {}
+            // 1. ĐÓNG BẢNG MẬT KHẨU
             try { hideModal('auth-modal'); } catch(e) {}
-            try { document.getElementById('admin-password').closest('.modal').style.display = 'none'; } catch(e) {}
+            try { document.getElementById('auth-modal').classList.add('hidden'); } catch(e) {}
+            try { document.getElementById('auth-modal').style.display = 'none'; } catch(e) {}
             
-           
-          var possibleIds = ['teacherMode', 'adminPanel', 'teacher-dashboard', 'quanly', 'admin-dashboard', 'admin-screen', 'adminScreen'];
-            var moThanhCong = false;
-            
-            possibleIds.forEach(function(id) {
-                var el = document.getElementById(id);
-                if (el) {
-                    el.style.display = 'block';
-                    moThanhCong = true;
-                }
-            });
-            
-            if (!moThanhCong) {
-                alert("Đã mở khóa Server! Nhưng code không tìm thấy tên ID của vùng Quản lý đề trong HTML.");
+            // 2. MỞ KHÓA MÀN HÌNH QUẢN LÝ (Gỡ bỏ lớp giáp 'hidden')
+            var adminScreen = document.getElementById('admin-screen');
+            if (adminScreen) {
+                adminScreen.classList.remove('hidden'); // Cú chốt là đây ạ! Xóa chữ hidden
+                adminScreen.style.display = 'block';
+                
+                // Ẩn màn hình làm bài của học sinh đi để nhường chỗ cho màn hình quản lý
+                try { document.getElementById('start-screen').classList.add('hidden'); } catch(e) {}
+                try { document.getElementById('main-screen').classList.add('hidden'); } catch(e) {}
+            } else {
+                alert("Lỗi: Không tìm thấy ID admin-screen trong HTML!");
             }
         }
     })
     .catch(error => {
         if (errorEl) errorEl.innerText = "Mật khẩu giáo viên không chính xác!";
     });
-} 
+}
     function hideAdminScreen() { 
         showScreen('start-screen'); 
         document.getElementById('admin-msg-add').innerText = ''; 
