@@ -4663,13 +4663,13 @@ function checkPassword() {
         if (data.success) {
             alert("Xác thực thành công!");
             
-            // 1. ÉP ĐÓNG BẢNG MẬT KHẨU (Bỏ qua lỗi nếu sai tên)
+            
             try { document.getElementById('auth-modal').style.display = 'none'; } catch(e) {}
             try { hideModal('auth-modal'); } catch(e) {}
             try { document.getElementById('admin-password').closest('.modal').style.display = 'none'; } catch(e) {}
             
-            // 2. QUÉT TỰ ĐỘNG CÁC VÙNG QUẢN LÝ ĐỂ MỞ RA
-            var possibleIds = ['teacherMode', 'adminPanel', 'teacher-dashboard', 'quanly', 'admin-dashboard'];
+           
+          var possibleIds = ['teacherMode', 'adminPanel', 'teacher-dashboard', 'quanly', 'admin-dashboard', 'admin-screen', 'adminScreen'];
             var moThanhCong = false;
             
             possibleIds.forEach(function(id) {
