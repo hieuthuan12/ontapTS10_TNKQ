@@ -1110,7 +1110,7 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
 
 <script>
     // MẬT KHẨU GIÁO VIÊN
-    const GIAO_VIEN_PASSWORD = "ConTrai@2002";
+    
 
     // --- DATABASE_MARKER_START ---
     const defaultDatabase = {
@@ -4644,13 +4644,38 @@ url:e,reason:"blocked_domain_not_allowlisted"},b.parentOrigin);throw new DOMExce
     }
     function handlePasswordEnter(e) { if (e.key === 'Enter') checkPassword(); }
     function checkPassword() {
-        const pwd = document.getElementById('admin-password').value;
-        if (pwd === GIAO_VIEN_PASSWORD) {
-            hideModal('auth-modal'); showScreen('admin-screen'); switchAdminTab('add');
+    // 1. Lấy mật khẩu do thầy/cô gõ vào ô nhập
+    var input = document.getElementById('admin-password').value;
+    
+    // 2. Gửi mật khẩu này lên Server Vercel nhờ kiểm tra hộ
+    fetch('/api/check-password', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ password: input })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            // Nếu Đúng mật khẩu -> Cho phép vào phần Quản lý đề
+            alert("Xác thực thành công!");
+            showModal('auth-modal'); // Đóng bảng nhập mật khẩu
+            
+            // --- THẦY CHÚ Ý Chỗ này ---
+            // Thầy hãy copy các dòng lệnh chuyển trang hoặc mở chức năng của GV 
+            // ở hàm checkPassword cũ của thầy dán vào đây nhé.
+            
         } else {
-            document.getElementById('auth-error').innerText = "❌ Mật khẩu không chính xác!";
+            // Nếu Sai mật khẩu -> Báo lỗi lên màn hình
+            document.getElementById('auth-error').innerText = data.message;
         }
-    }
+    })
+    .catch(error => {
+        console.error('Lỗi kết nối:', error);
+        document.getElementById('auth-error').innerText = "Lỗi kết nối hệ thống bảo mật!";
+    });
+}
 
     // CHẾ ĐỘ GIÁO VIÊN
     function hideAdminScreen() { 
